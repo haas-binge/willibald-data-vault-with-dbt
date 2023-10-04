@@ -1,0 +1,27 @@
+version: 2
+
+exposures:
+
+  - name: Willibald_Controlling
+    label: Willibald_Controlling
+    type: dashboard
+    maturity: low
+    url: 
+    description: >
+      Linking all entities, the power_bi reporting of Willibald_Controlling is dependend on.
+
+    depends_on:
+      - ref('fact_sales')
+      - ref('dim_associationpartner')
+      - ref('dim_category_deliveryadherence')   
+      - ref('dim_customer') 
+      - ref('dim_delivery_date')
+      - ref('dim_product_type')
+      - ref('dim_product')
+      - ref('dim_productcategory')      
+      - ref('dim_reporting_date')      
+      - ref('dim_requested_date')      
+
+    owner:
+      name: Jan Binge / Andreas Haas
+      email: jan@binge.de / andreas@haas-erlangen.com

@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: customer_associationpartner_l
+    tags: 
+      - customer
+      - associationpartner
+    description: Link
+    
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h
+
+    columns:
+      - name: hk_associationpartner_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('associationpartner_h')
+              field: hk_associationpartner_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_customer_h
+            - hk_associationpartner_h
+

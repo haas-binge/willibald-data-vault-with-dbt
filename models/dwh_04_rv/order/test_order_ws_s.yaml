@@ -1,0 +1,19 @@
+
+version: 2
+models:
+  - name: order_ws_s
+    tags:
+      - order_h
+    description: Satellit for order_h
+    columns:
+      - name: hk_order_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('order_h')
+              field: hk_order_h
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_order_h
+             - ldts

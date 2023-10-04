@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: LOAD_EXT
+    database: "{{ env_var('DWH_SOURCE_DATABASE') }}"
+    schema: DWH_01_EXT
+    tags:
+      - load
+    tables:
+      - name: EXT_WEBSHOP_KUNDE 
+      - name: EXT_WEBSHOP_LIEFERADRESSE 
+      - name: EXT_WEBSHOP_LIEFERDIENST 
+      - name: EXT_WEBSHOP_LIEFERUNG
+      - name: EXT_WEBSHOP_POSITION 
+      - name: EXT_WEBSHOP_PRODUKT 
+      - name: EXT_WEBSHOP_PRODUKTKATEGORIE 
+      - name: EXT_WEBSHOP_VEREINSPARTNER 
+      - name: EXT_WEBSHOP_WOHNORT 
+      - name: EXT_WEBSHOP_REF_PRODUKT_TYP
+      - name: EXT_WEBSHOP_BESTELLUNG
+      - name: EXT_ROADSHOW_BESTELLUNG
+      - name: EXT_MISC_KATEGORIE_TERMINTREUE
+      
+  - name: LOAD_EXT_META
+    database: "{{ env_var('DWH_DATABASE') }}"
+    schema: DWH_00_META
+    tags: 
+      - meta
+    tables:
+     - name: META_HWM

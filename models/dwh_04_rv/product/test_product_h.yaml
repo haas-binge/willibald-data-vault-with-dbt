@@ -1,0 +1,18 @@
+
+version: 2
+models:
+  - name: product_h
+    tags:
+      - product
+    description: "Hub of product"
+    columns:
+      - name: hk_product_h
+        description: "Hashkey of product"
+        tests:
+          - not_null
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - ldts          
+             - hk_product_h
+

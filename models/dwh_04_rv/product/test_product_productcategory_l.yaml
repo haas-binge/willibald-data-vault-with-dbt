@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: product_productcategory_l
+    tags: 
+      - productcategory
+      - product
+    description: Link
+    
+    columns:
+      - name: hk_productcategory_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('productcategory_h')
+              field: hk_productcategory_h
+
+    columns:
+      - name: hk_product_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('product_h')
+              field: hk_product_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_productcategory_h
+            - hk_product_h
+

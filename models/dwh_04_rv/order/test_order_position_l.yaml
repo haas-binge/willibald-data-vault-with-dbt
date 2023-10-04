@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: order_position_l
+    tags: 
+      - position
+      - order
+    description: Link
+    
+    columns:
+      - name: hk_position_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('position_h')
+              field: hk_position_h
+
+    columns:
+      - name: hk_order_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('order_h')
+              field: hk_order_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_position_h
+            - hk_order_h
+

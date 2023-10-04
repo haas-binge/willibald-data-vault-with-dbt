@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: order_associationpartner_l
+    tags: 
+      - order
+      - associationpartner
+    description: Link
+    
+    columns:
+      - name: hk_order_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('order_h')
+              field: hk_order_h
+
+    columns:
+      - name: hk_associationpartner_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('associationpartner_h')
+              field: hk_associationpartner_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_order_h
+            - hk_associationpartner_h
+

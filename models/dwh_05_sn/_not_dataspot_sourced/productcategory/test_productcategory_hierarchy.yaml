@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: productcategory_hierarchy_sns
+    tags:
+      - productcategory_hierarchy
+    description: "Business-Satellite of productcategory"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_productcategory_h
+             - hk_productcategory_parent_h
+             - sdts
+  - name: productcategory_hierarchy_snp
+    tags:
+      - productcategory_hierarchy
+    description: "PIT of productcategory_hierarchy"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_productcategory_hierarchy_l
+             - sdts

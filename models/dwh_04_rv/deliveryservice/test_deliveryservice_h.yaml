@@ -1,0 +1,18 @@
+
+version: 2
+models:
+  - name: deliveryservice_h
+    tags:
+      - deliveryservice
+    description: "Hub of deliveryservice"
+    columns:
+      - name: hk_deliveryservice_h
+        description: "Hashkey of deliveryservice"
+        tests:
+          - not_null
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - ldts          
+             - hk_deliveryservice_h
+

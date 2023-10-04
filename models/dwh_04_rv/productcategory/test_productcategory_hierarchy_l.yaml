@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: productcategory_hierarchy_l
+    tags: 
+      - productcategory_parent
+      - productcategory
+    description: Link
+    
+    columns:
+      - name: hk_productcategory_parent_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('productcategory_parent_h')
+              field: hk_productcategory_parent_h
+
+    columns:
+      - name: hk_productcategory_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('productcategory_h')
+              field: hk_productcategory_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_productcategory_parent_h
+            - hk_productcategory_h
+

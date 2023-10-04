@@ -1,0 +1,18 @@
+
+version: 2
+models:
+  - name: position_h
+    tags:
+      - position
+    description: "Hub of position"
+    columns:
+      - name: hk_position_h
+        description: "Hashkey of position"
+        tests:
+          - not_null
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - ldts          
+             - hk_position_h
+

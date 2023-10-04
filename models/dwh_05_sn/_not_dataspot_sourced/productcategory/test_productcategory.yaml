@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: productcategory_sns
+    tags:
+      - productcategory
+    description: "Business-Satellite of productcategory"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_productcategory_h
+             - sdts
+  - name: productcategory_snp
+    tags:
+      - productcategory_hierarchy
+    description: "PIT of productcategory"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_productcategory_h
+             - sdts

@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: order_customer_sns
+    tags:
+      - order_customer
+    description: "snapshot satellite of order_customer"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_order_h
+             - hk_customer_h
+             - sdts
+  - name: order_customer_snp
+    tags:
+      - contract
+    description: "Pit of order_customer"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_order_customer_l
+             - sdts

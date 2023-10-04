@@ -1,0 +1,19 @@
+
+version: 2
+models:
+  - name: productcategory_ws_s
+    tags:
+      - productcategory_h
+    description: Satellit for productcategory_h
+    columns:
+      - name: hk_productcategory_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('productcategory_h')
+              field: hk_productcategory_h
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_productcategory_h
+             - ldts

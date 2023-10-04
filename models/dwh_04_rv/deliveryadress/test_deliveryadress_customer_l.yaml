@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: deliveryadress_customer_l
+    tags: 
+      - deliveryadress
+      - customer
+    description: Link
+    
+    columns:
+      - name: hk_deliveryadress_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('deliveryadress_h')
+              field: hk_deliveryadress_h
+
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_deliveryadress_h
+            - hk_customer_h
+

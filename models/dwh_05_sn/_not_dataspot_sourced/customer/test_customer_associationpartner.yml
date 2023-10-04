@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: customer_associationpartner_sns
+    tags:
+      - customer_associationpartner
+    description: "snapshot satellite of customer_associationpartner"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_customer_h
+             - hk_associationpartner_h
+             - sdts
+  - name: customer_associationpartner_snp
+    tags:
+      - contract
+    description: "Pit of customer_associationpartner"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_customer_associationpartner_l
+             - sdts

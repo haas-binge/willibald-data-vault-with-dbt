@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: order_position_sns
+    tags:
+      - order_position
+    description: "snapshot satellite of order_position"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_order_h
+             - hk_position_h
+             - sdts
+  - name: order_position_snp
+    tags:
+      - contract
+    description: "Pit of order_position"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_order_position_l
+             - sdts

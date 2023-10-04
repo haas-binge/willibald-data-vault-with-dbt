@@ -1,0 +1,111 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'ddvug_willibald_samen'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'ddvug_willibald_samen'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+dispatch:
+  - macro_namespace: datavault4dbt
+    search_order: ['datavault_extension','datavault4dbt']  # enable override
+
+vars:
+  #Column Aliases
+  datavault4dbt.ldts_alias: 'ldts'
+  datavault4dbt.rsrc_alias: 'rsrc'
+  datavault4dbt.ledts_alias: 'ledts'
+  datavault4dbt.snapshot_trigger_column: 'is_active'
+  datavault4dbt.sdts_alias: 'sdts'
+  datavault4dbt.stg_alias: 'stg'
+  datavault4dbt.is_current_col_alias: 'IS_CURRENT'
+
+  #Hash Configuration
+  datavault4dbt.hash: 'MD5'
+  datavault4dbt.hash_datatype: 'STRING'
+  datavault4dbt.hashkey_input_case_sensitive: FALSE
+  datavault4dbt.hashdiff_input_case_sensitive: TRUE
+  
+  #Stage Configuration
+  datavault4dbt.copy_rsrc_ldts_input_columns: false  
+  
+  #Ghost Record Configuration  
+  datavault4dbt.beginning_of_all_times: {"bigquery":"0001-01-01T00-00-01","snowflake":"0001-01-01T00:00:01", "exasol": "0001-01-01 00:00:01"}
+  datavault4dbt.end_of_all_times: {"bigquery":"8888-12-31T23-59-59","snowflake":"8888-12-31T23:59:59", "exasol": "8888-12-31 23:59:59"}
+  datavault4dbt.timestamp_format: {"bigquery":"%Y-%m-%dT%H-%M-%S","snowflake":"YYYY-MM-DDTHH24:MI:SS", "exasol": "YYYY-mm-dd HH:MI:SS"}
+  datavault4dbt.default_unknown_rsrc: 'SYSTEM'
+  datavault4dbt.default_error_rsrc: 'ERROR'
+  datavault4dbt.rsrc_default_dtype: 'STRING'
+  datavault4dbt.stg_default_dtype: 'STRING'
+  datavault4dbt.derived_columns_default_dtype: STRING
+
+  #Datatype specific default values
+  datavault4dbt.error_value__STRING: '(error)'
+  datavault4dbt.error_value_alt__STRING: 'e'
+  datavault4dbt.unknown_value__STRING: '(unknown)'
+  datavault4dbt.unknown_value_alt__STRING: 'u'
+  default_collision_key: "'!default'"
+  local_timestamp: "TO_TIMESTAMP(DATEADD(HOUR, 1, SYSDATE()))"
+  meta_schema: dwh_00_meta
+  external_tables_schema: dwh_01_external
+  ext_full_refresh: true
+  
+on-run-start:
+   - '{{ autoexec() }}'
+models:
+  +transient: false
+  +persist_docs:
+    relation: true
+    columns: true
+  +on_schema_change: "append_new_columns"
+  ddvug_willibald_samen:
+    dwh_00_meta:
+        +schema: dwh_00_meta
+        tags:
+            - meta
+    dwh_02_load:
+        +schema: dwh_02_load
+        tags:
+            - load
+    dwh_03_err:
+        +schema: dwh_03_err
+        tags:
+            - error            
+    dwh_03_stage:
+        +schema: dwh_03_stage
+        tags:
+            - stage
+    dwh_04_rv:
+        +schema: dwh_04_rv
+        tags:
+            - rv
+    dwh_05_sn:
+        +schema: dwh_05_sn
+        tags:
+            - sn
+    dwh_06_bv:
+        +schema: dwh_06_bv
+        tags:
+            - bv            
+    dwh_07_inmt:
+        +schema: dwh_07_inmt
+        tags:
+            - inmt

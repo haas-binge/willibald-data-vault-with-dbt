@@ -1,0 +1,19 @@
+
+version: 2
+models:
+  - name: position_rs_s
+    tags:
+      - position_h
+    description: Satellit for position_h
+    columns:
+      - name: hk_position_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('position_h')
+              field: hk_position_h
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_position_h
+             - ldts

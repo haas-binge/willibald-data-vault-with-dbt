@@ -1,0 +1,19 @@
+
+version: 2
+models:
+  - name: associationpartner_ws_s
+    tags:
+      - associationpartner_h
+    description: Satellit for associationpartner_h
+    columns:
+      - name: hk_associationpartner_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('associationpartner_h')
+              field: hk_associationpartner_h
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_associationpartner_h
+             - ldts

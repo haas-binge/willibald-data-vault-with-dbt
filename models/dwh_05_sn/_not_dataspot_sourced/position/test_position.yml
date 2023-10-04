@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: position_sns
+    tags:
+      - position
+    description: "snapshot satellite of position"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_position_h
+             - sdts
+  - name: position_snp
+    tags:
+      - contract
+    description: "Pit of position"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_position_h
+             - sdts

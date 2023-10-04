@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: position_product_sns
+    tags:
+      - position_product
+    description: "snapshot satellite of position_product"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_position_h
+             - hk_product_h
+             - sdts
+  - name: position_product_snp
+    tags:
+      - contract
+    description: "Pit of position_product"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_position_product_l
+             - sdts

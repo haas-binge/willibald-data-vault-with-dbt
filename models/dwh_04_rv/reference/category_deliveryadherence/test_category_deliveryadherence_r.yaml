@@ -1,0 +1,18 @@
+
+version: 2
+models:
+  - name: category_deliveryadherence_r
+    tags:
+      - category_deliveryadherence
+    description: "Hub of category_deliveryadherence"
+    columns:
+      - name: category_deliveryadherence_nk
+        description: "Hashkey of category_deliveryadherence"
+        tests:
+          - not_null
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - ldts          
+             - 'category_deliveryadherence_nk'
+

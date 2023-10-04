@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: order_sns
+    tags:
+      - order
+    description: "snapshot satellite of order"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_order_h
+             - sdts

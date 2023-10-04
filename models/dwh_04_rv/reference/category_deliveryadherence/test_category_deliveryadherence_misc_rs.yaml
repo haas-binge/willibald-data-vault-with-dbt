@@ -1,0 +1,19 @@
+
+version: 2
+models:
+  - name: category_deliveryadherence_misc_rs
+    tags:
+      - category_deliveryadherence_r
+    description: Satellit for category_deliveryadherence_r
+    columns:
+      - name: category_deliveryadherence_nk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('category_deliveryadherence_r')
+              field: category_deliveryadherence_nk
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - category_deliveryadherence_nk
+             - ldts

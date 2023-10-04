@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: customer_sns
+    tags:
+      - customer
+    description: "snapshot satellite of customer"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_customer_h
+             - sdts
+  - name: customer_snp
+    tags:
+      - contract
+    description: "Pit of customer"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_customer_h
+             - sdts

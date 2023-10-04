@@ -1,0 +1,20 @@
+version: 2
+sources:
+  - name: DWS
+    database: DWS
+    schema: dwh_01_ext
+    tables:
+      - name: EXT_WEBSHOP_LIEFERUNG
+        description: ""
+        tags:
+        - external
+
+        external:
+          location: "@dws.dwh_01_ext.ddvug_willibald_samen_s3_stage/"
+          file_format: "(format_name = dws.dwh_01_ext.FF_SEMICOLON)"
+          auto_refresh: false
+          pattern: "ldts/webshop/lieferung/lieferung_.*[.]csv"
+          partitions:
+            - name: filenamedate
+              data_type: varchar
+              expression: metadata$filename

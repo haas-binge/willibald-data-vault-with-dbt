@@ -1,0 +1,19 @@
+
+version: 2
+models:
+  - name: deliveryadress_ws_s
+    tags:
+      - deliveryadress_h
+    description: Satellit for deliveryadress_h
+    columns:
+      - name: hk_deliveryadress_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('deliveryadress_h')
+              field: hk_deliveryadress_h
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+             - hk_deliveryadress_h
+             - ldts

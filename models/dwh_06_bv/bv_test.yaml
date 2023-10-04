@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: productcategory_bs
+    tags:
+      - productcategory
+    description: "Hierarchy of product-categories"
+    columns:
+      - name: hk_productcategory_d
+        tests:
+          - not_null
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sdts
+            - hk_productcategory_d
+  - name: sales_bb
+    tags:
+      - fakt
+    description: "fakt-table"
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - reporting_date
+            - hk_order_h
+            - hk_position_h

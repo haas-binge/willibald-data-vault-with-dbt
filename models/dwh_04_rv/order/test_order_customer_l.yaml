@@ -1,0 +1,31 @@
+
+version: 2
+models:
+  - name: order_customer_l
+    tags: 
+      - order
+      - customer
+    description: Link
+    
+    columns:
+      - name: hk_order_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('order_h')
+              field: hk_order_h
+
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h
+
+    tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_order_h
+            - hk_customer_h
+
