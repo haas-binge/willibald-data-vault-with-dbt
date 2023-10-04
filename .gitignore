@@ -131,6 +131,5 @@ logs/
 dbt_packages/
 useful_scripts/_activate_database.ps1
 [~][$]*
-useful_documents/Analysis order_associationpartner.sql
-useful_documents/base for yedi_load_roadshow_bestellung.sql
-useful_documents/base for yedi_load_roadshow_bestellung.sql
+
+

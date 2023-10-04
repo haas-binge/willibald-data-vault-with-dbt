@@ -1,5 +1,7 @@
 # Willibald data vault data warehouse with dbt installation guidelines for dummies
 
+For an overview of all the available tutorials and documents, go to [README](../readme.md).
+
 Within this document we will try to describe every step necessary to fully install 
 the Willibald on dbt implementation, trying not to assume any prior knowledge.
 You don't need to know anything about Python, dbt or data vault.
@@ -13,14 +15,18 @@ Open Hyper-V-Manager/Action/create new virtual machine --> Choose Ubuntu (newest
 ## Basic installations
 First of all you need to install some programms on the virtual machine. Start the terminal to do this.
 
-- python on your computer 
+- python should already be available  
     ```bash
         # Update the package list
         sudo apt update
-        # Install Python 3
-        sudo apt install python3
-        # check he installed version
+        
+        # check the installed version
         python3 --version
+        # in my ubuntu version it showed: Python 3.10.12
+
+        # Install Python in case it is not already available   
+        sudo apt install python3
+
     ```
 
 - code editor
@@ -52,7 +58,7 @@ First of all you need to install some programms on the virtual machine. Start th
 
 ## Get the Repository running
 
-- Define the folder you want the repository to be loaded in and jump into it: 
+- Define the folder you want the repository to be loaded in and jump into it:  
   I am using a dev folder within Documents
     ```bash
     cd ~/Documents && mkdir dev && cd dev
@@ -93,15 +99,19 @@ Run the following commands:
 To install dbt:
 ```bash
     pip install -r requirements.txt
-
-    #This will install all programs defined within the document requirements.txt 
-
-    dbt deps  
-    #This will install all packages defined within the packages.yml
 ```
+This will install all programs defined within the document requirements.txt in the root of your project.
+We only defined dbt-snowflake==1.6.0, but based on this dbt-core will be installed as well.
+
+```bash
+    dbt deps  
+```    
+This will install all packages defined within the packages.yml in the root of your project.
+
 
 One of the Packages installed then is https://github.com/haas-binge/dwa-compare-dbt-package.git  
-It includes all of the additional macros, we defined in addition to datavault4dtb to make the solution work.  
+It includes all of the additional macros, we defined in addition to datavault4dbt to make the solution work. 
+
 It is not part of dbt package-management, thats why the following message will appear:
 ```
     WARNING: The git package "https://github.com/haas-binge/dwa-compare-dbt-package.git" 
@@ -113,7 +123,7 @@ It is not part of dbt package-management, thats why the following message will a
 Just ignore this warning.
 
 ## Get Snowflake account running and connected
-If you don’t already a snowflake account, now it is time to do this (there is a 30 day free trial available).
+If you don’t already have a snowflake account, now is the time to do this (there is a 30 day free trial available).
 
 ### Sign up for a Snowflake account
 
@@ -128,7 +138,10 @@ We'd suggest to use the one nearest to you, though.
 
 Within Snowflake you need to define a data warehouse database and a schema for the loading-layer.
 
-Let's call the database DWH_WILLIBALD and the schema DWH_02_LOAD. 
+Let's call the database DWH_WILLIBALD.
+
+Caution:
+You have to define a schema within your data warehouse database and you have to call that schema DWH_02_LOAD. 
 
 ### Connect dbt with the Snowflake account
 
@@ -145,16 +158,18 @@ nano ~/.bashrc
 ```
 Add your environment variable definition at the end of the file. 
 
+```bash
     export DWH_SNOWFLAKE_ACCOUNT="my_account"  
 	# you will find your account in Snowflake under Admin - Accounts -> click copy link it will look something like https://xxxx-yy1234.snowflakecomputing.com
     # only use xxxx-yy1234 as "my_account"!
-    export DWH_USER="my_dwh_user"    
+    export DWH_USER="my_dwh_user" 
+    # you will find the user under Admin - Users & Roles   
     export DWH_PASSWORD="my_password"     
     export DWH_DATABASE="my_database" 
-    # just name it as you like
+    # DWH_WILLIBALD or the name you chose
     export DWH_SOURCE_DATABASE="DWA_COMPARE"  
     # keep that name, if you want to use the privat share we are providing
-
+```
 
 
 Save the file and exit the text editor.
@@ -185,7 +200,7 @@ Our initial setup contained an AWS S3 datalake (see page 7 in the presentation W
 To simplify the process we now offer the data (in the way they looked as external tables) as a snowflake private share named DWA_COMPARE. 
 If you want to access it, just contact us, we are happy to add you.
 
-email to: jan@binge.de and andreas@haas-erlangen.com 
+See [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
 
 All we need from you is your Snowflake account name.
 Within Snowflake/Admin/Accounts click on your account and copy the link, it will look like:
@@ -196,9 +211,6 @@ You will need to click on GET to activate this private share for you (and follow
 
 ## Run the full solution
 
-Create the database you specified in the environment variable DWH_DATABASE within Snowflake
-Snowflake/Data/Databases -> + Database
-
 Now you can run the following command within your virtual python environment to generate the complete solution.
 ```
 dbt build
@@ -207,24 +219,9 @@ dbt build
 If you did everything right and we documented everything properly, you now should have the complete solution up and running.
 
 If you encountered any problems, found topics we should add to this description to make it easier for others to set it up, please contact us:  
-jan@binge.de and andreas@haas-erlangen.com
+See [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
 
 
-## Interesting links:  
-
-Link to the Package we made public, containing everything you need to set up the Willibald dbt solution
-https://github.com/haas-binge/dwa-compare-dbt
-
-Link to the homepage of dbt from dbt-labs  https://www.getdbt.com/  
-     There is also an interesting offer to run dbt in a fully hosted cloud solution (dbt cloud)
-
-Link to Scalefree (https://www.scalefree.com/), the consulting company offering the free dbt package datavault4dbt (https://github.com/ScalefreeCOM/datavault4dbt) 
-
-
-DDVUG Website for the Data Warehouse automation challenge: dwa-compare.info
-
-Video of the persentation of the solution on the TDWI:
-https://youtube.com/playlist?list=PLFcYych8PxveerZ-J9POQ4WpFcbd1rhvJ
 
 
 

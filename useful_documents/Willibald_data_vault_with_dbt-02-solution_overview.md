@@ -1,11 +1,23 @@
 # Willibald data vault with dbt - 02 - solution overview
 
-Apart from this one, have a look at the following tutorials/document to guide you through our solution:
+## What we cover in this document
+In this document we will go through our solution, describing some basic features of dbt using our solution and 
+have a look at the different layers we set up arguing, why we did it that way.
 
-.... von 00 übernehmen
+## Link to installation guidelines
+If you followed the dummies guide, you now have this solution up and running on a virtual ubuntu machine and on your snowflake account. 
+If you haven’t yet, see the   
+
+[Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
+
+For an overview of all the available tutorials and documents, go to [README](../readme.md).
 
 
+## Table of Contents:
 - [Willibald data vault with dbt - 02 - solution overview](#willibald-data-vault-with-dbt---02---solution-overview)
+  - [What we cover in this document](#what-we-cover-in-this-document)
+  - [Link to installation guidelines](#link-to-installation-guidelines)
+  - [Table of Contents:](#table-of-contents)
   - [What is dbt](#what-is-dbt)
   - [Why we use dbt](#why-we-use-dbt)
   - [Some major dbt topics described in our solution](#some-major-dbt-topics-described-in-our-solution)
@@ -20,6 +32,7 @@ Apart from this one, have a look at the following tutorials/document to guide yo
     - [dwh\_05\_sn](#dwh_05_sn)
     - [dwh\_06\_bv](#dwh_06_bv)
     - [dwh\_07\_inmt](#dwh_07_inmt)
+
 
 
 ## What is dbt

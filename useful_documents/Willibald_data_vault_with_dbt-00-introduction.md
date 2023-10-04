@@ -10,7 +10,7 @@ See [dwa-compare.info](dwa-compare.info) for more details on this project and th
 
 
 We - two freelance data architects with extensive experience in data projects and also many years of experience in data vault and in using automation tools -   
-were asked to set up the solution using using [dbt](https://www.getdbt.com/) and [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) an open source package from [Scalefree](https://www.scalefree.com/). .
+were asked to set up the solution using [dbt](https://www.getdbt.com/) and [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) an open source package from [Scalefree](https://www.scalefree.com/).
 
 ## Jan Binge
 
@@ -37,7 +37,8 @@ andreas@haas-erlangen.com
 Here is the setup we defined for the dbt solution we presented at the TDWI in June 2023 in Munich.
 
 Willibald has two different operative systems selling in a webshop and on regular roadshows.
-We loaded the data in a datalake into S3. The dataset consists of 3 different data deliveries.
+We loaded the data in a datalake into S3. The dataset consists of 3 different data deliveries  
+(we defined them as coming from 2022-03-14, 2022-03-21 and 2022-03-28).
 
 Our data warehouse is running on Snowflake containing the layers documented here, we were using [dbt](https://www.getdbt.com/) and [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) from [Scalefree](https://www.scalefree.com/). 
 
@@ -61,22 +62,36 @@ For more on this go to
 
 We set up the following tutorials/document to guide you through our solution:
 
-[Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) 
+[Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md)   
+Short introduction about us and what this is all about.
 
 [Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)  
 A detailed step by step tutorial to set up our solution using an ubuntu virtual machine.
-If you installed this, you will have a the fully functional solution up and running in your own snowflake account. 
+If you installed this, you will have the fully functional solution up and running in your own snowflake account. 
 
 [Willibald data vault with dbt - 02 - solution overview](Willibald_data_vault_with_dbt-02-solution_overview.md)  
-Go through the solution describing all the components, some basic topics regarding dbt and
+Walk through the solution describing all the components, some basic topics regarding dbt,
 have a look at the different layers we set up and describe why we did it that way.
 
 [Willibald data vault with dbt - 03 - the data challenges and how we solved them](Willibald_data_vault_with_dbt-03-the_data_challenges_and_how_we_solved_them.md)  
 Description of all the data challenges presented in the data set including a description on how we solved them.
 
 [Willibald data vault with dbt - 04 - overarching functions](Willibald_data_vault_with_dbt-04-overarching_functions.md)  
-Comments regarding the overarching functions that were asked within the challenge
+Description of all the overarching functions we were required to comment on within the challenge.
 
-[Willibald data vault with dbt - 05 - closing the gap between business and tech](Willibald_data_vault_with_dbt-05-closing_the_gap_between_business_and_tech.md)  
-We describe, how we set up 
-How should an ideal data warehouse solution based on dbt be set up. 
+[Willibald data vault with dbt - 05 - yedi tests and testing in general](Willibald_data_vault_with_dbt-05-yedi_tests_and_testing_in_general.md)  
+How did we solve the yedi test challenge and some examples of singular and generic tests.
+
+[Willibald data vault with dbt - 06 - closing the gap between business and tech](Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)  
+Description of how we closely integrated this dbt-solution with [dataspot.](https://www.dataspot.at/en/) a data governance tool. That way we are coming close to our vision of an ideal data warehouse setup.
+
+
+## Some additional links:
+- [dbt](https://www.getdbt.com/) 
+- [dbt cloud](https://www.getdbt.com/product/dbt-cloud) interesting SaaS-Solution from dbt labs
+- [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) from [Scalefree](https://www.scalefree.com/)
+- [DDVUG](https://datavaultusergroup.de/) German speaking data vault user group
+- [DDVUG Data Warehouse automation Challenge](https://dwa-compare.info/en/start-2/) on the TDWI in June 2023
+- [dataspot.](https://www.dataspot.at/en/)
+- Link to Video of our [TDWI presentation](https://www.youtube.com/playlist?list=PLFcYych8PxveerZ-J9POQ4WpFcbd1rhvJ)
+

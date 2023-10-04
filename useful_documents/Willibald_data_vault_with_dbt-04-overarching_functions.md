@@ -1,13 +1,31 @@
-# Willibald data vault with dbt - 03 - the data challenges and how we solved them
+# Willibald data vault with dbt - 04 - overarching functions
 
+## What we cover in this document
+Description of all the overarching functions we were required to comment on within the challenge.
+
+
+## Link to installation guidelines
 If you followed the dummies guide, you now have this solution up and running on a virtual ubuntu machine and on your snowflake account. 
 If you haven’t yet, see the   
 
 [Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
 
-Also have a look at the following documents:
+For an overview of all the available tutorials and documents, go to [README](../readme.md).
 
-[Willibald data vault with dbt - 03 - the data challenges and how we solved them.md](Willibald_data_vault_with_dbt-03-the_data_challenges_and_how_we_solved_them.md)
+
+## Table of contents
+- [Willibald data vault with dbt - 04 - overarching functions](#willibald-data-vault-with-dbt---04---overarching-functions)
+  - [What we cover in this document](#what-we-cover-in-this-document)
+  - [Link to installation guidelines](#link-to-installation-guidelines)
+  - [Table of contents](#table-of-contents)
+  - [Data lineage](#data-lineage)
+  - [Error Handling](#error-handling)
+  - [Orchestration](#orchestration)
+  - [Deployment](#deployment)
+  - [Scheduling](#scheduling)
+  - [Supported databases](#supported-databases)
+  - [Prerequisites for the installation](#prerequisites-for-the-installation)
+  - [High water marking](#high-water-marking)
 
 
 
