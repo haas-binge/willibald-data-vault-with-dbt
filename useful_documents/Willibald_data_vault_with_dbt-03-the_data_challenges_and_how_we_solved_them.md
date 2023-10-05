@@ -27,7 +27,7 @@ For an overview of all the available tutorials and documents, go to [README](../
     - [Snapshot-Layer](#snapshot-layer)
   - [Invalid foreign key (Lieferadresse has unknown Kunde)](#invalidforeignkey-lieferadressehasunknownkunde)
   - [Deletion of Orders](#deletion-of-orders)
-- [(Historized) reference table](#historized-reference-table)
+  - [(Historized) reference table](#historized-reference-table)
   - [Validity in Relationships](#validity-in-relationships)
   - [Hierarchical Link](#hierarchical-link)
   - [Multi-active Satellite](#multi-active-satellite)
@@ -264,7 +264,7 @@ order by sdts, order_bk
 
   
   
-# (Historized) reference table
+## (Historized) reference table
 
 The data for delivery-adherence is being delivered twice (first day and third day of delivery) with changes to the data in-between.
 
