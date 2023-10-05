@@ -26,7 +26,7 @@ willibald@binge.de
 
 Andreas Haas has been working as a consultant in the business intelligence sector for over 20 years. During this time, he has successfully implemented data warehouse projects in various industries, mainly in the roles of data warehouse architect, data engineer and in project management. As a certified Data Vault 2.0 Practitioner, large metadata-driven Data Vault implementations are the main focus of his work.
 
-willibald@haas-erlangen.com  
+willibald@haas-erlangen.de  
 [linkedin](linkedin.com/in/haasandreas/)
 
 
