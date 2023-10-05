@@ -18,7 +18,7 @@ were asked to set up the solution using [dbt](https://www.getdbt.com/) and [data
   
 Jan Binge has gained over 25 years of experience in the field of IT, out of which he has spent more than a decade as a freelance consultant specializing in "data warehouse design". Following his certification as a Datavault Practitioner in 2014, he has directed his attention towards modeling and developing data warehouse systems while also emphasizing the automation of creation processes.
 
-jan@binge.de  
+willibald@binge.de  
 [linkedin](linkedin.com/in/jan-binge)
 
 ## Andreas Haas
@@ -26,7 +26,7 @@ jan@binge.de
 
 Andreas Haas has been working as a consultant in the business intelligence sector for over 20 years. During this time, he has successfully implemented data warehouse projects in various industries, mainly in the roles of data warehouse architect, data engineer and in project management. As a certified Data Vault 2.0 Practitioner, large metadata-driven Data Vault implementations are the main focus of his work.
 
-andreas@haas-erlangen.com  
+willibald@haas-erlangen.com  
 [linkedin](linkedin.com/in/haasandreas/)
 
 
