@@ -1,6 +1,6 @@
 # Willibald data vault data warehouse with dbt installation guidelines for dummies
 
-For an overview of all the available tutorials and documents, go to [README](../readme.md).
+For an overview of all the available tutorials and documents, go to [README](../README.md).
 
 Within this document we will try to describe every step necessary to fully install 
 the Willibald on dbt implementation, trying not to assume any prior knowledge.
