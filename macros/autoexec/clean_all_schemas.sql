@@ -3,7 +3,7 @@
   {% set get_schemas_query %}
       SELECT schema_name 
       FROM INFORMATION_SCHEMA.SCHEMATA 
-      WHERE NOT schema_name in ('INFORMATION_SCHEMA', 'PUBLIC', 'DWH_00_META' )
+      WHERE NOT schema_name in ('INFORMATION_SCHEMA', 'PUBLIC', '{{var("meta_schema")}}' )
       order by schema_name desc;
   {% endset %}
 
