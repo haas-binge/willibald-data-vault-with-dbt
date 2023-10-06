@@ -54,20 +54,7 @@ See [Willibald data vault with dbt - 00 - introduction](useful_documents/Williba
   (In addition to the package datavault4dbt we defined our own macros published as the package datavault_extension (see packages.yml)).
 - configure your database connection using the dbt configuration file or edit profiles.yml in source-directory (includes adding three environment-variables).
 - how to get the base data
-    1. Easiest Option: contact us to get access to the private share DWA_COMPARE
-    2. get the data from https://github.com/m2data/Willibald-Data 
-   ```
-        - put the data in your s3-bucket (or azure data lake), configure external tables on snowflake and alter existing definitions (under dwh_01_ext)
-
-                                                           / misc     - kategorie_termintreue - kategorie_termintreue_20220307_20220307_080000.csv ...
-        - our s3-bucket looks like ddvug-willibald-samen-dbt--ldts-  roadshow - bestellung - bestellung_20220307_20220307_080000.csv ...
-                                                           \ webshop  - bestellung - bestellung_20220314_20220314_080000.csv ...
-                                                                      \ kunde      - kunde_20220314_20220314_080000.csv
-                                                                                     kunde_20220321_20220321_080000.csv                
-                                                                                     kunde_20220328_20220328_080000.csv
-                                                                      \ ..
-        - adapt the source_type in the load-models. Replace snowflake_external_table_surrogate with snowflake_external_table
-    ```
+   - contact us to get access to the private share DWA_COMPARE  
 - run the dbt commands (dbt build) to create your data models and transform your data.
 
 
