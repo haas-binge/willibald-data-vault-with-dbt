@@ -10,7 +10,7 @@ If you haven’t yet, see the
 
 [Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
 
-For an overview of all the available tutorials and documents, go to [README](../readme.md).
+For an overview of all the available tutorials and documents, go to [README](../README.md).
 
 ## Table of contents
 - [Willibald data vault with dbt - 06 - Closing the gap between business and tech](#willibald-data-vault-with-dbt---06---closing-the-gap-between-business-and-tech)
@@ -27,6 +27,8 @@ For an overview of all the available tutorials and documents, go to [README](../
     - [dataspot relationships](#dataspot-relationships)
     - [dataspot generated technical datamodel Raw Vault](#dataspot-generated-technical-datamodel-raw-vault)
   - [Final thoughts](#final-thoughts)
+  - [Next steps](#next-steps)
+    - [Standard for a business metadata repository](#standard-for-a-business-metadata-repository)
 
 
 ## Intermediate result

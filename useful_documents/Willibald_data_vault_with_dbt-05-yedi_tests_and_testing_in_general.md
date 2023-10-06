@@ -9,7 +9,7 @@ If you haven’t yet, see the
 
 [Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
 
-For an overview of all the available tutorials and documents, go to [README](../readme.md).
+For an overview of all the available tutorials and documents, go to [README](../README.md).
 
 ## Table of contents
 - [Willibald data vault with dbt - 05 - Yedi tests and testing in general](#willibald-data-vault-with-dbt---05---yedi-tests-and-testing-in-general)
