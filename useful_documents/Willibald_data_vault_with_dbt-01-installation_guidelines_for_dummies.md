@@ -65,14 +65,14 @@ First of all you need to install some programms on the virtual machine. Start th
     ```
 - Clone the git-repository we made publicly available
     ```bash
-    git clone https://github.com/haas-binge/dwa-compare-dbt
+    git clone https://github.com/haas-binge/WILLIBALD-DATA-VAULT-WITH-DBT
     ```
 - Start Visual studio code
 
   Jump into the newly generated directory 
 
     ```bash
-    cd dwa-compare-dbt
+    cd WILLIBALD-DATA-VAULT-WITH-DBT
     # start visual studio from there 
     code .  
     ```
@@ -140,8 +140,6 @@ Within Snowflake you need to define a data warehouse database and a schema for t
 
 Let's call the database DWH_WILLIBALD.
 
-Caution:
-You have to define a schema within your data warehouse database and you have to call that schema DWH_02_LOAD. 
 
 ### Connect dbt with the Snowflake account
 
