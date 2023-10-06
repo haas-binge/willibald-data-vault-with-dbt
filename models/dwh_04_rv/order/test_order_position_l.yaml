@@ -1,4 +1,5 @@
 
+# automatically generated based on dataspot
 version: 2
 models:
   - name: order_position_l
