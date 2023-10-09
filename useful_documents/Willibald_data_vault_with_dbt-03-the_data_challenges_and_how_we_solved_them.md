@@ -20,6 +20,7 @@ For an overview of all the available tutorials and documents, go to [README](../
   - [Link to installation guidelines](#link-to-installation-guidelines)
   - [Table of content:](#table-of-content)
   - [Data Vault Know How](#data-vault-know-how)
+  - [A basic definition](#a-basic-definition)
   - [Early integration](#early-integration)
   - [Changes of Attributes (A-B-A changes in customer data)](#changes-of-attributes-a-b-a-changes-incustomerdata)
   - [Deletions of Business Keys (Deletions in customer data)](#deletions-of-business-keys-deletionsin-customer-data)
@@ -214,11 +215,11 @@ Just for a better overview, we separated the pits and the snapshot-satellite-vie
 <img src="images/rv_deliveryadress.png" alt="rv_deliveryadress" width="700">
 
 
-The period 1 data (2022-03-14) contain delivery addresses (lieferadresse) for customers (KundeID), for which there is no record in CUSTOMER (kunde /KundeIDs 999, 998 and 997).
+The period 1 data (2022-03-14) contain delivery addresses (lieferadresse) for customers (KundeID), for which there is no record in the loadtable (kunde /KundeIDs 999, 998 and 997).
 
 The deliveryaddress table feeds the link deliveryaddress_customer_l.
 A sourcetable that feeds data into a link should also always feed all the hubs attached to this link. 
-That way, it doesn't matter, if the customers are already available in the customertable, no available information will be lost.
+That way, it doesn't matter, if the customers are already available in the customertable, no information from the deliveryaddress table will be lost within the raw vault. 
 It is possible to define a list of sourcetables to feed into the hub using the datavault4dbt.hub template.
   
   
@@ -294,11 +295,11 @@ order by sdts, cdm_count_days_from
 ## Validity in Relationships
 
 Testcase:  
-The relationship between ORDER (Bestellung) and POSITION (Position) cannot change. The key situation makes every change a deletion and a new creation.  
+The relationship between order (Bestellung) and position (Position) cannot change. The key situation makes every change a deletion and a new creation.  
 All other relationships can change. 
-The test cases are all implemented on the foreign key in CUSTOMER (Kunde) to ASSOCIATION PARTNER (VereinsPartner). The following situations occur here:
+The test cases are all implemented on the foreign key in customer (Kunde) to associationpartner (VereinsPartner). The following situations occur here:
 - the foreign key is optional and therefore also NULL
-- the foreign key changes between ASSOCIATION PARTNERs
+- the foreign key changes between associationpartners
 - the foreign key changes from „valid“ to „invalid“ - and in some cases then even back to „valid“ again
 
 How we solved it:  
