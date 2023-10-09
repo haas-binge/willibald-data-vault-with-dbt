@@ -126,9 +126,10 @@ In there the latest load-date of every source is saved and only newer data is r
 
 
 ## Deployment
-
+<figure>
 <img src="images/deployment.png" alt="deployment" width="700">
-
+  <figcaption>https://www.getdbt.com/analytics-engineering/transformation/git-workflow/</figcaption>
+</figure>
 As already stated all of the programming-artefacts in dbt are plain text files.  
 dbt supports all of the gitbased tools like github, gitlab, bitbucket, Azure DevOps to keep track of versions.  
 That way it is easy to implement a professional development workflow.  
