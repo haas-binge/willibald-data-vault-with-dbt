@@ -7,7 +7,7 @@ the Willibald on dbt implementation, trying not to assume any prior knowledge.
 You don't need to know anything about Python, dbt or data vault.
 To have a completely clean environment for this setup, we used a virtual machine with Ubuntu 22.04.
 
-Our host machine is Windows, so we used Hyper V Manager to create the virtual machine.
+Our host machine is Windows (You will need Windows 10 64Bit Professional Edition at least), so we used Hyper V Manager to create the virtual machine.
 
 Open Hyper-V-Manager/Action/create new virtual machine --> Choose Ubuntu (newest LTS)
 
@@ -136,9 +136,9 @@ https://docs.snowflake.com/user-guide/admin-trial-account
 The Snowflake Standard edition is enough and it doesn't matter, which cloud provider you choose and where it is located  
 We'd suggest to use the one nearest to you, though.
 
-Within Snowflake you need to define a data warehouse database and a schema for the loading-layer.
+Within Snowflake you only need to create a data warehouse database.
 
-Let's call the database DWH_WILLIBALD.
+Let's call the database DWH_WILLIBALD (in this document and its scripts it will be referenced as this).
 
 
 ### Connect dbt with the Snowflake account

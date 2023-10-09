@@ -47,7 +47,7 @@ In case you are new to data vault, there are a lot of good books and workshops a
 
 <img src="images/rv_customer_associationpartner.png" alt="data vault basiscs" width="300">
 
-A basic definition I like
+## A basic definition 
 Data Vault modeling focuses on deconstructing source tables into fundamental components:   
  Hubs (for storing business keys)  
  Links (for managing relationships between data entities)  
@@ -216,7 +216,7 @@ Just for a better overview, we separated the pits and the snapshot-satellite-vie
 
 The period 1 data (2022-03-14) contain delivery addresses (lieferadresse) for customers (KundeID), for which there is no record in CUSTOMER (kunde /KundeIDs 999, 998 and 997).
 
-The deliveryaddress table feeds the link deliveryaddress_customer_l
+The deliveryaddress table feeds the link deliveryaddress_customer_l.
 A sourcetable that feeds data into a link should also always feed all the hubs attached to this link. 
 That way, it doesn't matter, if the customers are already available in the customertable, no available information will be lost.
 It is possible to define a list of sourcetables to feed into the hub using the datavault4dbt.hub template.
@@ -271,8 +271,7 @@ The data for delivery-adherence is being delivered twice (first day and third d
 These changes should be reflected in the calculation of the delivery adherence in the information mart.
 In datavault4dbt two macros are provided to create a reference-table and a historized reference-table: ref_hub and ref_sat_v0. 
 
-They create a DV-structure that is quite similar to the standard hub and satellite with the difference of using natural keys instead of hash-keys.  
-We use the snapshot layer for historized reference tables similar to satellite tables.
+They create a DV-structure that is quite similar to the standard hub and satellite with the difference of using natural keys instead of hash-keys. We use the snapshot layer for historized reference tables similar to satellite tables.
 
 <img src="images/snapshot_layer_category_deliveryadherence.png" alt="snapshot_layer_category_deliveryadherence" width="700">
 
@@ -370,7 +369,7 @@ We implemented this parent-child table as a hierarchical link, as you can see th
 
 It is important, that the entries of both columns the parent and the child are loaded into the hub productcategory_h.
 
-In models/dwh_04_rv/productcategory/productcategory_h.sql you see, that this is easily possible using the standard datavault4dbt.hub macro
+In models/dwh_04_rv/productcategory/productcategory_h.sql you see, that this is easily possible using the standard datavault4dbt-hub macro
 
 <img src="images/model_productcategory_h.png" alt="model_productcategory_h" width="500">
 

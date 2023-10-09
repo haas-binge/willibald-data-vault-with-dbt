@@ -37,8 +37,7 @@ willibald@haas-erlangen.de
 Here is the setup we defined for the dbt solution we presented at the TDWI in June 2023 in Munich.
 
 Willibald has two different operative systems selling in a webshop and on regular roadshows.
-We loaded the data in a datalake into S3. The dataset consists of 3 different data deliveries  
-(we defined them as coming from 2022-03-14, 2022-03-21 and 2022-03-28).
+We loaded the data in a datalake into S3. The dataset consists of 3 different data deliveries (we defined them as coming from 2022-03-14, 2022-03-21 and 2022-03-28).
 
 Our data warehouse is running on Snowflake containing the layers documented here, we were using [dbt](https://www.getdbt.com/) and [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) from [Scalefree](https://www.scalefree.com/). 
 

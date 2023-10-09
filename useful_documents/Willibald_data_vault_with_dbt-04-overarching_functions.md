@@ -56,7 +56,7 @@ Columnar lineage is not available -- in our view this really is a disadvantage o
 
 ## Error Handling
 
-One of the challenges faced when creating a data warehouse pipeline is how to handle errors, such as data type errors. There are two available alternatives:
+One of the challenges we faced when creating a data warehouse pipeline is how to handle errors, such as data type errors. There are two available alternatives:
 
 You can choose to store only text data in your raw vault. This approach allows you to load data regardless of data type issues into your raw vault. Subsequently, you will need to define and manage appropriate data types and handle data type errors downstream.
 
