@@ -57,6 +57,14 @@ For more on this go to
 [Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech](Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)
 
 
+## What is this repository all about
+
+To simplify the installation, we defined a Snowflake private share mimicking the external tables within our initial solution.  
+That way no S3 setup is required and you can still gain full insights into our solution.  
+
+<img src="images/solution_overview.png" alt="solution_overview" width="300">  
+
+
 ## Tutorials/documents describing the solution
 
 We set up the following tutorials/document to guide you through our solution:
@@ -66,14 +74,14 @@ Short introduction about us and what this is all about.
 
 [Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)  
 A detailed step by step tutorial to set up our solution using an ubuntu virtual machine.
-If you installed this, you will have the fully functional solution up and running in your own snowflake account. 
+If you installed this, you will have the fully functional solution up and running in your own snowflake account. Ni prior knowledge of dbt necessary.
 
 [Willibald data vault with dbt - 02 - solution overview](Willibald_data_vault_with_dbt-02-solution_overview.md)  
 Walk through the solution describing all the components, some basic topics regarding dbt,
 have a look at the different layers we set up and describe why we did it that way.
 
 [Willibald data vault with dbt - 03 - the data challenges and how we solved them](Willibald_data_vault_with_dbt-03-the_data_challenges_and_how_we_solved_them.md)  
-Description of all the data challenges presented in the data set including a description on how we solved them.
+Description of all the data challenges presented in the data set including a description on how we solved them. This also includes SQL-code you can use in your Snowflake-environment, if you followed the installation guidelines.
 
 [Willibald data vault with dbt - 04 - overarching functions](Willibald_data_vault_with_dbt-04-overarching_functions.md)  
 Description of all the overarching functions we were required to comment on within the challenge.
