@@ -164,16 +164,16 @@ All entities from dwh_01_ext up to dwh_05_sn we generated completely automatic b
 apart from the ones within the aptly named folder _not_dataspot_sourced. 
 
 For more on this see: 
-[Willibald data vault with dbt - 05 - closing the gap between business and tech](Willibald_data_vault_with_dbt-05-closing_the_gap_between_business_and_tech.md)
+[Willibald data vault with dbt - 06 - closing the gap between business and tech](Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)
 
 
 Similar to the subfolders within the dbt project we defined one Snowflake Schema for each layer.
 What are the functions of each layer?
 
 ### dwh_02_load
-Extracting data from json-structure
-Error Checks as defined
-High Water Marking insert
+Extracting data from json-structure  
+Error Checks as defined  
+High Water Marking insert  
 
 ### dwh_03_stage
 Setting up all necessary hash-keys, all entities here are defined as views.
@@ -186,7 +186,7 @@ Contain all entities belonging to the raw vault.
 
 ### dwh_05_sn
 snapshot layer
-Containing pits and a snapshot views based on the pit containing all  SATs surrounding the base entity of the pit, if specified in the macro.  
+Containing pits and a snapshot view based on the pit containing all  SATs surrounding the base entity of the pit, if specified in the macro.  
 For more on this, see the description regarding the snapshot-layer in:
 [Willibald data vault with dbt - 03 - the data challenges and how we solved them](Willibald_data_vault_with_dbt-03-the_data_challenges_and_how_we_solved_them.md)  
 
