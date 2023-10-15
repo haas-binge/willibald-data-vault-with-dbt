@@ -1,4 +1,4 @@
-{{ config(materialized="view", pre_hook=["{{ datavault_extension.refresh_external_table('DWS.EXT_WEBSHOP_BESTELLUNG','snowflake_external_table_surrogate') }}"], post_hook=["{{ datavault_extension.insert_hwm(this) }}"]) }}
+{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('DWS.EXT_WEBSHOP_BESTELLUNG','snowflake_external_table_surrogate') }}"], post_hook=["{{ datavault_extension.insert_hwm(this) }}"]) }}
 
 {%- set yaml_metadata -%}
 source_model: 
