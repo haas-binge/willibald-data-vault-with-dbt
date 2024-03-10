@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: LOAD_EXT
-    database: "{{ env_var('DWH_SOURCE_DATABASE') }}"
+    database: "{{ env_var('DBT_SOURCE_DATABASE') }}"
     schema: DWH_01_EXT
     tags:
       - load
@@ -22,7 +22,7 @@ sources:
       - name: EXT_MISC_KATEGORIE_TERMINTREUE
       
   - name: LOAD_EXT_META
-    database: "{{ env_var('DWH_DATABASE') }}"
+    database: "{{ env_var('DBT_DATABASE') }}"
     schema: DWH_00_META
     tags: 
       - meta
