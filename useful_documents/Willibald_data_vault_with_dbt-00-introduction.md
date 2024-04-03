@@ -72,9 +72,12 @@ We set up the following tutorials/document to guide you through our solution:
 [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md)   
 Short introduction about us and what this is all about.
 
-[Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)  
-A detailed step by step tutorial to set up our solution using an ubuntu virtual machine.
-If you installed this, you will have the fully functional solution up and running in your own snowflake account. Ni prior knowledge of dbt necessary.
+[Willibald data vault with dbt - 01 - installation guidelines using ubuntu and dbt-core](Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md)  
+A detailed step by step tutorial to set up our solution using an ubuntu virtual machine. 
+
+[Willibald data vault with dbt - 01 - installation guidelines using dbt cloud](Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md)  
+A detailed step by step tutorial to set up our solution using an ubuntu virtual machine. 
+If you installed this, you will have the fully functional solution up and running in your own snowflake account. No prior knowledge of dbt necessary.
 
 [Willibald data vault with dbt - 02 - solution overview](Willibald_data_vault_with_dbt-02-solution_overview.md)  
 Walk through the solution describing all the components, some basic topics regarding dbt,
