@@ -4,10 +4,10 @@ For an overview of all the available tutorials and documents, go to [README](../
 
 Within this document we will try to describe every step necessary to fully install 
 the Willibald on dbt implementation in dbt cloud, trying not to assume any prior knowledge.
-You don't need to know anything about Python, dbt cloud or data vault.
+Our aim is, that you don't need to know anything about Snowflake, dbt cloud or data vault.
 
 ## Get Snowflake account running and connected
-If you don’t already have a snowflake account, now is the time to do this (there is a 30 day free trial available).
+If you don’t already have a snowflake account, now is the time to set one up (there is a 30 day free trial available).
 
 ### Sign up for a Snowflake account
 
@@ -80,6 +80,7 @@ Schema
     You can keep the default
 
 Target name keep default
+
 Threads keep default
 
 --> Test connection
@@ -112,8 +113,9 @@ Click: Start developing in the IDE
 
 Click: Deploy - Environments
  - add the following two Variables:
-  DBT_SOURCE_DATABASE   DWA_COMPARE  (the databaseshare we offer as a private share)
-  DBT_DATABASE          DWH_WILLBALD (or any other DB name you chose for your DWH)
+   - DBT_SOURCE_DATABASE   DWA_COMPARE  (the databaseshare we offer as a private share)
+   - DBT_DATABASE          DWH_WILLBALD (or any other DB name you chose for your DWH)
+
 
   <img src="images/dbtcloud_environments.png" alt="dbtcloud_environments" width="500">  
 
