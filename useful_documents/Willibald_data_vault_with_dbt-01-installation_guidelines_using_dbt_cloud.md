@@ -2,8 +2,7 @@
 
 For an overview of all the available tutorials and documents, go to [README](../README.md).
 
-Within this document we will try to describe every step necessary to fully install 
-the Willibald on dbt implementation in dbt cloud, trying not to assume any prior knowledge.
+Within this document we will try to describe every step necessary to fully install the Willibald on dbt implementation in dbt cloud, trying not to assume any prior knowledge.
 Our aim is, that you don't need to know anything about Snowflake, dbt cloud or data vault.
 
 ## Get Snowflake account running and connected
@@ -29,6 +28,7 @@ Keep the following information regarding your snowflake account, because you wil
 
     Database:
     Within Snowflake you need to create a data warehouse database.
+    (Data - Databases - + Database (top right corner))
     Let's call the database DWH_WILLIBALD (in this document and its scripts it will be referenced as this).
 
     Warehouse:
@@ -53,9 +53,14 @@ All we need from you is your Snowflake account name.
 Within Snowflake/Admin/Accounts click on your account and copy the link, it will look like:
 https://xxxx-yy1234.snowflakecomputing.com
 
-As soon as we added you to the private share, the database dwa_compare will show up under Snowflake/Data/Private Sharing.
+As soon as we added you to the private share, the database dwa_compare will show up under Snowflake/Data Products/Private Sharing.
 You will need to click on GET to activate this private share for you.
 
+## Fork repository in GitHub
+
+Log into your github account (or create one).
+Search for our repository: willibald-data-vault-with-dbt
+Fork the repository.
 
 ## Set up a dbt cloud account
 If you haven't already, set up a dbt cloud account:https://www.getdbt.com/signup
@@ -88,20 +93,11 @@ Let's hope you see this, otherwise check the troubleshooting pages from dbt
 
 <img src="images/dbtcloud_getstarted_testconnection.png" alt="dbtcloud_getstarted_testconnection" width="700">  
 
-## Setup a repository
-
-As far as we know you will need a GitHub account on your own.
-Login and search for our public github repository willibald-data-vault-with-dbt
-
-?? 
-    how to include a Repo into your GitHub account?
-    do I have to fork  the Repo so that I can add branches etc.?
-??
-
 
 Choose GitHub
 
-LogIn and authorize dbt
+LogIn and authorize dbt 
+ you only need to authorize the forked repository.
 
 <img src="images/dbtcloud_projectisready.png" alt="dbtcloud_projectisready" width="500">  
 
@@ -112,34 +108,47 @@ Click: Start developing in the IDE
 ### Define Environment Variables
 
 Click: Deploy - Environments
- - add the following two Variables:
-   - DBT_SOURCE_DATABASE   DWA_COMPARE  (the databaseshare we offer as a private share)
-   - DBT_DATABASE          DWH_WILLBALD (or any other DB name you chose for your DWH)
+choose Environment variables and add the following two Variables:
+  
+|            |                     |          |
+| ---------- | ------------------- | -------- |
+| **Environment Variable**   | **Name**        | **comment** |
+| DBT_SOURCE_DATABASE      | DWA_COMPARE            | the databaseshare we offer as a private    |
+| DBT_DATABASE        | DWH_WILLIBALD               | or any other DB name you chose for your DWH   |
+
+
+
 
 
   <img src="images/dbtcloud_environments.png" alt="dbtcloud_environments" width="500">  
 
 
 
-Back to Develop Cloud IDE 
+Back to Develop - Cloud IDE 
 
 
 
 change branch and checkout dbt-cloud
+In case there is a lock file under version control, delete this (revert) - then you can change the branch.
 
 
 
 ## Run the full solution
 
 Now you can run the following command within your dbt cloud environment to generate the complete solution.
+
+(bottom left)
+
 ```
 dbt build
 ```
 
-If you did everything right and we documented everything properly, you now should have the complete solution up and running.
+If you did everything right and we documented everything properly, you now should have the complete solution up and running. You are now all set to discover the solution, see the other tutorials regarding this [README](../README.md).
 
 If you encountered any problems, found topics we should add to this description to make it easier for others to set it up, please contact us:  
 See [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
+
+
 
 
 

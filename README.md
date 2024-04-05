@@ -13,8 +13,7 @@ We set up the following tutorials/document to guide you through our solution:
 Short introduction about us and what this is all about.
 
 [Willibald data vault with dbt - 01 - installation guidelines using dbt cloud](useful_documents/Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud.md)  
-A detailed step by step tutorial to set up our solution using dbt cloud. 
-If you installed this, you will have the fully functional solution up and running in your own snowflake account. No prior knowledge of dbt necessary.
+A detailed step by step tutorial to set up our solution using dbt cloud. If you installed this, you will have the fully functional solution up and running in your own snowflake account. No prior knowledge of dbt necessary.
 
 [Willibald data vault with dbt - 01 - installation guidelines using ubuntu and dbt-core](useful_documents/Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md)  
 A detailed step by step tutorial to set up our solution using an ubuntu virtual machine. If you installed this, you will have the fully functional solution up and running in your own snowflake account. No prior knowledge of dbt necessary.
@@ -33,6 +32,15 @@ How we solved the yedi test challenge and some examples of singular and generic 
 
 [Willibald data vault with dbt - 06 - closing the gap between business and tech](useful_documents/Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)  
 Description of how we closely integrated this dbt-solution with [dataspot.](https://www.dataspot.at/en/) a data governance tool. That way we are coming close to our vision of an ideal data warehouse setup.
+
+## Some additional links:
+- [dbt](https://www.getdbt.com/) 
+- [dbt cloud](https://www.getdbt.com/product/dbt-cloud) interesting SaaS-Solution from dbt labs
+- [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) from [Scalefree](https://www.scalefree.com/)
+- [DDVUG](https://datavaultusergroup.de/) German speaking data vault user group
+- [DDVUG Data Warehouse automation Challenge](https://dwa-compare.info/en/start-2/) on the TDWI in June 2023
+- [dataspot.](https://www.dataspot.at/en/)
+- Link to Video of our [TDWI presentation](https://www.youtube.com/playlist?list=PLFcYych8PxveerZ-J9POQ4WpFcbd1rhvJ)
 
 
 

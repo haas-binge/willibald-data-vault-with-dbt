@@ -164,7 +164,7 @@ For more on this see:
 [Willibald data vault with dbt - 06 - closing the gap between business and tech](Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)
 
 
-Similar to the subfolders within the dbt project we defined one Snowflake Schema for each layer.
+Similar to the subfolders within the dbt project we defined one Snowflake Schema for each layer (You find the definition in dbt_project.yml).
 What are the functions of each layer?
 
 ### dwh_02_load
