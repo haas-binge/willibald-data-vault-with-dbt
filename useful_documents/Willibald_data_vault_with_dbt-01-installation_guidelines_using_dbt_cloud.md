@@ -56,11 +56,12 @@ https://xxxx-yy1234.snowflakecomputing.com
 As soon as we added you to the private share, the database dwa_compare will show up under Snowflake/Data Products/Private Sharing.
 You will need to click on GET to activate this private share for you.
 
-## Fork repository in GitHub
+## Fork/Clone repository in GitHub
 
 Log into your github account (or create one).
 Search for our repository: willibald-data-vault-with-dbt
-Fork the repository.
+Fork or clone the repository. 
+
 
 ## Set up a dbt cloud account
 If you haven't already, set up a dbt cloud account:https://www.getdbt.com/signup
