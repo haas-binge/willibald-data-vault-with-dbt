@@ -1,15 +1,15 @@
 
-$env:DWH_DATABASE = ''
-$env:DWH_PASSWORD = ''
-$env:DWH_SNOWFLAKE_ACCOUNT = ''
-$env:DWH_USER = ''
-$env:DWH_SOURCE_DATABASE = ''
+$env:DBT_DATABASE = ''
+$env:DBT_PASSWORD = ''
+$env:DBT_SNOWFLAKE_ACCOUNT = ''
+$env:DBT_USER = ''
+$env:DBT_SOURCE_DATABASE = ''
 
-[System.Environment]::SetEnvironmentVariable('DWH_DATABASE',$env:DWH_DATABASE)
-[System.Environment]::SetEnvironmentVariable('DWH_PASSWORD', $env:DWH_PASSWORD)
-[System.Environment]::SetEnvironmentVariable('DWH_USER', $env:DWH_USER )
-[System.Environment]::SetEnvironmentVariable('DWH_SNOWFLAKE_ACCOUNT', $env:DWH_SNOWFLAKE_ACCOUNT)
-[System.Environment]::SetEnvironmentVariable('DWH_SOURCE_DATABASE',$env:DWH_SOURCE_DATABASE)
+[System.Environment]::SetEnvironmentVariable('DBT_DATABASE',$env:DBT_DATABASE)
+[System.Environment]::SetEnvironmentVariable('DBT_PASSWORD', $env:DBT_PASSWORD)
+[System.Environment]::SetEnvironmentVariable('DBT_USER', $env:DBT_USER )
+[System.Environment]::SetEnvironmentVariable('DBT_SNOWFLAKE_ACCOUNT', $env:DBT_SNOWFLAKE_ACCOUNT)
+[System.Environment]::SetEnvironmentVariable('DBT_SOURCE_DATABASE',$env:DBT_SOURCE_DATABASE)
 
-dir env:DWH_*
+dir env:DBT_*
 
