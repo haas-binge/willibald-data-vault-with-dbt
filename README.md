@@ -12,13 +12,14 @@ We set up the following tutorials/document to guide you through our solution:
 [Willibald data vault with dbt - 00 - introduction](useful_documents/Willibald_data_vault_with_dbt-00-introduction.md)   
 Short introduction about us and what this is all about.
 
-[Willibald data vault with dbt - 01 - installation guidelines for dummies](useful_documents/Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)  
-A detailed step by step tutorial to set up our solution using an ubuntu virtual machine.
-If you installed this, you will have the fully functional solution up and running in your own snowflake account. 
+[Willibald data vault with dbt - 01 - installation guidelines using dbt cloud](useful_documents/Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud.md)  
+A detailed step by step tutorial to set up our solution using dbt cloud. If you installed this, you will have the fully functional solution up and running in your own snowflake account. No prior knowledge of dbt necessary.
+
+[Willibald data vault with dbt - 01 - installation guidelines using ubuntu and dbt-core](useful_documents/Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md)  
+A detailed step by step tutorial to set up our solution using an ubuntu virtual machine. If you installed this, you will have the fully functional solution up and running in your own snowflake account. No prior knowledge of dbt necessary.
 
 [Willibald data vault with dbt - 02 - solution overview](useful_documents/Willibald_data_vault_with_dbt-02-solution_overview.md)  
-In this document we will go through our solution, describing some basic features of dbt using our solution and 
-have a look at the different layers we set up arguing, why we did it that way.
+In this document we will go through our solution, describing some basic features of dbt using our solution and have a look at the different layers we set up and arguing, why we did it that way.
 
 [Willibald data vault with dbt - 03 - the data challenges and how we solved them](useful_documents/Willibald_data_vault_with_dbt-03-the_data_challenges_and_how_we_solved_them.md)  
 Description of all the data challenges presented in the data set including a description on how we solved them.
@@ -31,6 +32,15 @@ How we solved the yedi test challenge and some examples of singular and generic 
 
 [Willibald data vault with dbt - 06 - closing the gap between business and tech](useful_documents/Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)  
 Description of how we closely integrated this dbt-solution with [dataspot.](https://www.dataspot.at/en/) a data governance tool. That way we are coming close to our vision of an ideal data warehouse setup.
+
+## Some additional links:
+- [dbt](https://www.getdbt.com/) 
+- [dbt cloud](https://www.getdbt.com/product/dbt-cloud) interesting SaaS-Solution from dbt labs
+- [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt) from [Scalefree](https://www.scalefree.com/)
+- [DDVUG](https://datavaultusergroup.de/) German speaking data vault user group
+- [DDVUG Data Warehouse automation Challenge](https://dwa-compare.info/en/start-2/) on the TDWI in June 2023
+- [dataspot.](https://www.dataspot.at/en/)
+- Link to Video of our [TDWI presentation](https://www.youtube.com/playlist?list=PLFcYych8PxveerZ-J9POQ4WpFcbd1rhvJ)
 
 
 

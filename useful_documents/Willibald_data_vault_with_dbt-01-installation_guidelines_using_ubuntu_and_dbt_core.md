@@ -1,4 +1,4 @@
-# Willibald data vault data warehouse with dbt installation guidelines for dummies
+# Willibald data vault with dbt 01 installation guidelines using ubuntu and dbt-core
 
 For an overview of all the available tutorials and documents, go to [README](../README.md).
 

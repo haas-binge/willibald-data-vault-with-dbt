@@ -7,5 +7,4 @@ hk_product_d
 , typ 
 , preis
 , pflanzort
-, pflanzabstand 
 from {{ ref('product_sns')}}

@@ -5,22 +5,22 @@ In this document, we will describe all of the data challenges presented in the d
 
 
 ## Link to installation guidelines
-If you followed the dummies guide, you now have this solution up and running on a virtual ubuntu machine and on your snowflake account. 
-If you haven’t yet, see the   
-
-[Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
+If you followed the guide, you now have this solution up and running on your snowflake account. 
+If you haven’t yet, see the installation guidelines.
 
 For an overview of all the available tutorials and documents, go to [README](../README.md).
 
-
+## Link to Data Warehouse automation Challenge
+For information on the set up of the challenge, the dataset and a detailed description of each challenge, go to [DDVUG Data Warehouse automation Challenge](https://dwa-compare.info/en/start-2/) on the TDWI in June 2023
 
 ## Table of content:
 - [Willibald data vault with dbt - 03 - the data challenges and how we solved them](#willibald-data-vault-with-dbt---03---the-data-challenges-and-how-we-solved-them)
   - [What we cover in this document](#what-we-cover-in-this-document)
   - [Link to installation guidelines](#link-to-installation-guidelines)
+  - [Link to Data Warehouse automation Challenge](#link-to-data-warehouse-automation-challenge)
   - [Table of content:](#table-of-content)
   - [Data Vault Know How](#data-vault-know-how)
-  - [A basic definition](#a-basic-definition)
+    - [A basic definition](#a-basic-definition)
   - [Early integration](#early-integration)
   - [Changes of Attributes (A-B-A changes in customer data)](#changes-of-attributes-a-b-a-changes-incustomerdata)
   - [Deletions of Business Keys (Deletions in customer data)](#deletions-of-business-keys-deletionsin-customer-data)
@@ -48,7 +48,7 @@ In case you are new to data vault, there are a lot of good books and workshops a
 
 <img src="images/rv_customer_associationpartner.png" alt="data vault basiscs" width="300">
 
-## A basic definition 
+### A basic definition 
 Data Vault modeling focuses on deconstructing source tables into fundamental components:   
  Hubs (for storing business keys)  
  Links (for managing relationships between data entities)  

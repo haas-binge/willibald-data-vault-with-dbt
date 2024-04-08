@@ -5,19 +5,16 @@ In this document we will go through our solution, describing some basic features
 have a look at the different layers we set up arguing, why we did it that way.
 
 ## Link to installation guidelines
-If you followed the dummies guide, you now have this solution up and running on a virtual ubuntu machine and on your snowflake account. 
-If you haven’t yet, see the   
-
-[Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
-
+If you followed the guide, you now have this solution up and running on your snowflake account. 
+If you haven’t yet, see the installation guidelines.
 For an overview of all the available tutorials and documents, go to [README](../README.md).
 
 
-## Table of Contents:
+## Table of Contents:useful_documents/
 - [Willibald data vault with dbt - 02 - solution overview](#willibald-data-vault-with-dbt---02---solution-overview)
   - [What we cover in this document](#what-we-cover-in-this-document)
   - [Link to installation guidelines](#link-to-installation-guidelines)
-  - [Table of Contents:](#table-of-contents)
+  - [Table of Contents:useful\_documents/](#table-of-contentsuseful_documents)
   - [What is dbt](#what-is-dbt)
   - [Why we use dbt](#why-we-use-dbt)
   - [Some major dbt topics described in our solution](#some-major-dbt-topics-described-in-our-solution)
@@ -68,7 +65,7 @@ from {{ ref('product_sns')}} --> it would also work, if you wrote a fully qualif
 These dependencies are used for displaying the data lineage.
 
 
-To show the data lineage run the following commands (make sure you are within your virtual machine):
+To show the data lineage run the following commands:
 ```
 dbt docs generate
 dbt docs serve
@@ -167,7 +164,7 @@ For more on this see:
 [Willibald data vault with dbt - 06 - closing the gap between business and tech](Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md)
 
 
-Similar to the subfolders within the dbt project we defined one Snowflake Schema for each layer.
+Similar to the subfolders within the dbt project we defined one Snowflake Schema for each layer (You find the definition in dbt_project.yml).
 What are the functions of each layer?
 
 ### dwh_02_load
