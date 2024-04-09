@@ -59,7 +59,7 @@ You will need to click on GET to activate this private share for you.
 ## Fork/Clone repository in GitHub
 
 Log into your github account (or create one).
-Search for our repository: willibald-data-vault-with-dbt
+Search for our repository: haas-binge/willibald-data-vault-with-dbt.
 Fork or clone the repository. 
 
 
@@ -98,7 +98,7 @@ Let's hope you see this, otherwise check the troubleshooting pages from dbt
 Choose GitHub
 
 LogIn and authorize dbt 
- you only need to authorize the forked repository.
+ you only need to authorize the cloned or forked repository.
 
 <img src="images/dbtcloud_projectisready.png" alt="dbtcloud_projectisready" width="500">  
 
@@ -126,11 +126,6 @@ choose Environment variables and add the following two Variables:
 
 
 Back to Develop - Cloud IDE 
-
-
-
-change branch and checkout dbt-cloud
-In case there is a lock file under version control, delete this (revert) - then you can change the branch.
 
 
 

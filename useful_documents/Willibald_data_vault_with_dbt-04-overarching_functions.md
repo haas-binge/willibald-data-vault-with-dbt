@@ -52,7 +52,12 @@ from {{ ref("customer_sns)}}
 That way dbt can build directed acyclic graphs for setting up the data lineage.
 It is also used for partly refreshing the model.
 
-Columnar lineage is not available -- in our view this really is a disadvantage of this solution. 
+Columnar lineage is not available in dbt core. 
+
+When using a paid version of dbt cloud, you can set up columnar lineage. 
+
+<img src="images/dbtcloud_columnarlineage.png" alt="columnarineage" width="900">
+This is an example of the lineage of the column Amount in fact_sales.
 
 
 ## Error Handling
@@ -137,11 +142,13 @@ That way it is easy to implement a professional development workflow.
 
 
 ## Scheduling
-In our project we used Jenkins to run dbt in a docker container. 
+In our dbt-core project  we used Jenkins to run dbt in a docker container. 
 As the Willibald-data is provided by a github-repo. We also used Jenkins to get the data and store it in the S3-Bucket.
 dbt doesn't need a lot of resources because most of the work is done by the target-database-server.
 
 <img src="images/scheduling.png" alt="scheduling" width="700">
+
+When using dbt cloud, there is a job scheduler available.
 
 ## Supported databases
 
