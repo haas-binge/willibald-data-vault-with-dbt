@@ -477,3 +477,5 @@ the historizing logic while implementing business-rules.
 - a *_bs (business satellite) view is specified for each dimension, if any business-logic needs to be applied
 
 
+For a description of the overarching function which were part of the challenge take a look at
+[Willibald_data_vault_with_dbt-04-overarching_functions](Willibald_data_vault_with_dbt-04-overarching_functions.md)  

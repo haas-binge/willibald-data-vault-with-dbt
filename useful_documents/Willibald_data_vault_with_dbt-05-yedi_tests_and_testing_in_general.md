@@ -65,3 +65,5 @@ and in \target\compiled\ddvug_willibald_samen\tests\yedi\ you can have a look at
 
 In regard to the yedi-tests, we simplified a little bit, by always only checking the latest delivery and by leaving out the erroneous data.
 
+
+See [Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech](Willibald_data_vault_with_dbt-06-closing_the_gap_between_business_and_tech.md) to see how we would take the next step of automating the creation of the DWH.

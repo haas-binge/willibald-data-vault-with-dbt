@@ -69,3 +69,9 @@ That way no S3 setup is required and you can still gain full insights into our s
 
 See [README](../README.md) =
 
+If you don't know how to start...step in here to get a description of the installation in dbt cloud: 
+[Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud](Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud.md) 
+
+or as a stand-alone solution using ubuntu and dbt core:
+
+[Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core](Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md)
