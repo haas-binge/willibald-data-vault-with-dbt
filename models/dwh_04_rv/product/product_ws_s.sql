@@ -10,6 +10,7 @@ parent_hashkey: 'hk_product_h'
 src_hashdiff: 'hd_product_ws_s'
 src_payload: 
   - bezeichnung
+  - pflanzabstand
   - pflanzort
   - preis
   - typ

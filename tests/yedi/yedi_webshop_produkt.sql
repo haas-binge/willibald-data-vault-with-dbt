@@ -11,6 +11,7 @@ source_model_target:
       product_ws_s:
         columns:
           - bezeichnung
+          - pflanzabstand
           - pflanzort
           - preis
           - typ
