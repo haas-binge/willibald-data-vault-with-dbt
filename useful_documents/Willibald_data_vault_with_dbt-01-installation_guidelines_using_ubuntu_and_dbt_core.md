@@ -219,6 +219,8 @@ If you did everything right and we documented everything properly, you now shoul
 If you encountered any problems, found topics we should add to this description to make it easier for others to set it up, please contact us:  
 See [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
 
+See [Willibald_data_vault_with_dbt-02-solution_overview](Willibald_data_vault_with_dbt-02-solution_overview.md) for an in-deep-description of the solution.
+
 
 
 

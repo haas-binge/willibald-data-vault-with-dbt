@@ -172,3 +172,5 @@ The hwm-table is located in the DWH_00_META-schema.
 There is also a hwm-mechanism integrated in datavault4dbt – which we didn't use.
 
 <img src="images/high_water_marking.png" alt="high_water_marking" width="400">
+
+See [Willibald_data_vault_with_dbt-05-yedi_tests_and_testing_in_general](Willibald_data_vault_with_dbt-05-yedi_tests_and_testing_in_general.md) for the description of how we tested the solution
