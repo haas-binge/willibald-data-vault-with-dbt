@@ -3,19 +3,11 @@
 ## What we cover in this document
 Description of how we closely integrated this dbt-solution with [dataspot.](https://www.dataspot.at/en/) a data governance tool. That way we are coming close to our vision of an ideal data warehouse setup.
 
-
-## Link to installation guidelines
-If you followed the dummies guide, you now have this solution up and running on a virtual ubuntu machine and on your snowflake account. 
-If you haven’t yet, see the   
-
-[Willibald data vault with dbt - 01 - installation guidelines for dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md)
-
 For an overview of all the available tutorials and documents, go to [README](../README.md).
 
 ## Table of contents
 - [Willibald data vault with dbt - 06 - Closing the gap between business and tech](#willibald-data-vault-with-dbt---06---closing-the-gap-between-business-and-tech)
   - [What we cover in this document](#what-we-cover-in-this-document)
-  - [Link to installation guidelines](#link-to-installation-guidelines)
   - [Table of contents](#table-of-contents)
   - [Intermediate result](#intermediate-result)
   - [Data Warehouse Automation: When Tools Create Complexity, Not Clarity](#data-warehouse-automation-when-tools-create-complexity-not-clarity)

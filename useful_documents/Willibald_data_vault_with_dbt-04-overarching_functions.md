@@ -163,7 +163,7 @@ Please check [dbt supported data plattforms](https://docs.getdbt.com/docs/suppor
 There are two ways to use dbt. 
 There is a SAAS-solution available from [dbt-labs](https://www.getdbt.com/), the creators of dbt, it is called [dbt-cloud](https://www.getdbt.com/product/dbt-cloud) - you can create a free account there.
 
-Or you can install dbt on a local machine, see [Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies](Willibald_data_vault_with_dbt-01-installation_guidelines_for_dummies.md) for more details.
+Or you can install dbt on a local machine, see [Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core](Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md) for more details.
 
 Prerequisites for installing dbt are python (3.7+) and a git-client.
 We also installed Visual Code on the virtual machine to be able to edit the text-files more comfortably.
