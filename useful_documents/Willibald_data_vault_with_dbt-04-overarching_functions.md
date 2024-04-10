@@ -152,22 +152,16 @@ When using dbt cloud, there is a job scheduler available.
 
 ## Supported databases
 
-As of April 2023 the following databases are supported by dbt and datavault4dbt.  
-Please check [dbt supported data plattforms](https://docs.getdbt.com/docs/supported-data-platforms
-) or contact [Scalefree](https://www.scalefree.com/) regarding an update on supported databases for datavault4dbt.  
-
-<img src="images/supported_databases.png" alt="supported_databases" width="400">
+Please check [dbt trusted-adapters](https://docs.getdbt.com/docs/trusted-adapters)  
+and [datavault4dbt](https://github.com/ScalefreeCOM/datavault4dbt?tab=readme-ov-file#supported-platforms).
 
 
 ## Prerequisites for the installation
 There are two ways to use dbt. 
-There is a SAAS-solution available from [dbt-labs](https://www.getdbt.com/), the creators of dbt, it is called [dbt-cloud](https://www.getdbt.com/product/dbt-cloud) - you can create a free account there.
+There is a SAAS-solution available from [dbt-labs](https://www.getdbt.com/), the creators of dbt, see [Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud](Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud.md) for more details.
 
 Or you can install dbt on a local machine, see [Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core](Willibald_data_vault_with_dbt-01-installation_guidelines_using_ubuntu_and_dbt_core.md) for more details.
 
-Prerequisites for installing dbt are python (3.7+) and a git-client.
-We also installed Visual Code on the virtual machine to be able to edit the text-files more comfortably.
-All other installations are then done using pip or dbt (except for jenkins and docker).
 
 ## High water marking
 
