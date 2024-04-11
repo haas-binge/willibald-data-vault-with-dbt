@@ -140,6 +140,10 @@ For now we do accept, that the definition of all the business logic in the Busin
 ## Next steps
 
 ### Standard for a business metadata repository
+
+<img src="images/Business_metadata_flow_dataspot_and_dbt.png" alt="Business_metadata_flow_dataspot_and_dbt" width="800">
+
+
 The business metadata repository as the interface between dataspot and dbt should be set up using a standard configuration. 
 That way it would be easy to swap each of the components. If your company uses another modelling tool, then only an adapter from the modelling tool into the business metadata repository needs to be written. On the other hand, if you want to use another automation tool instead of dbt, you'd just have to write the adapter to generate the artefacts your automation tool of choice needs.  
 Interesting work in this regard has been done by [Roelant Vos](https://roelantvos.com/blog/), who defined a [Data Warehouse Automation Schema](https://github.com/data-solution-automation-engine/data-warehouse-automation-metadata-schema/releases/tag/v2.0). 
