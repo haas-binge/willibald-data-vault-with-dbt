@@ -6,7 +6,7 @@ describing how they solved the 13 data challenges hidden within the data.
 Together with requirements for business rules and some overarching functions this makes 22 criteria the tool vendors had to solve.
 The idea is to have a framework to support companies in their tool selection process.
 
-See [dwa-compare.info](dwa-compare.info) for more details on this project and the option to compare the different tools with each other.
+See [dwa-compare.info](http://dwa-compare.info) for more details on this project and the option to compare the different tools with each other.
 
 
 We - two freelance data architects with extensive experience in data projects and also many years of experience in data vault and in using automation tools -   
