@@ -157,7 +157,18 @@ where customer_bk='70'
 ### What is a status satellite (*_sts)  
 <img src="images/status_satellite_customer.png" alt="status_satellite_customer" width="700">
 
-
+```
+-- status satellite
+select
+customer_h.customer_bk
+, customer_ws_sts.ldts
+, customer_ws_sts.cdc
+from dwh_willibald.dwh_04_rv.customer_h
+inner join dwh_willibald.dwh_04_rv.customer_ws_sts -- the standard raw vault satellite from the sourcesystem webshop (ws) with all the describing attributes
+on customer_h.hk_customer_h=customer_ws_sts.hk_customer_h
+where customer_bk='70'
+;
+```
 
 We defined a macro for the status satellite as part of the raw vault.  
 This satellite includes an attribute we called cdc with I for insert and D for deleted as possible entries.  
@@ -318,7 +329,7 @@ kundeid,
 vereinspartnerid, 
 ldts
 from  dwh_willibald.dwh_02_load.load_webshop_kunde
--- be aware of the high water marking logic. There will only be data in here on the first run or when you call dbt build
+-- be aware of the high water marking logic. There will only be data in here on the first run or when you call dbt build --full-refresh
 where kundeid in (16)
 order by rsrc
 ;
