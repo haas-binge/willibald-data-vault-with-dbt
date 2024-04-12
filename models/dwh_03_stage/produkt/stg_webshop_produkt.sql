@@ -20,6 +20,7 @@ hashed_columns:
     is_hashdiff: true
     columns:
       - bezeichnung
+      - pflanzabstand
       - pflanzort
       - preis
       - typ
