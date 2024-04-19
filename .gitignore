@@ -131,8 +131,6 @@ logs/
 dbt_packages/
 useful_scripts/_activate_database.ps1
 [~][$]*
-
-
 useful_scripts/activate_database_jb.sh
 .DS_Store
 useful_documents/.DS_Store
