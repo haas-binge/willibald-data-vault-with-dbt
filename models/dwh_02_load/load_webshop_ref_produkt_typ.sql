@@ -1,5 +1,5 @@
 
-{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('DWS.EXT_WEBSHOP_REF_PRODUKT_TYP','snowflake_external_table_surrogate') }}"], post_hook=["{{datavault_extension.insert_hwm(this) }}"]) }}
+{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('WILLIBALD_DATA_VAULT_WITH_DBT.EXT_WEBSHOP_REF_PRODUKT_TYP','snowflake_external_table') }}"], post_hook=["{{datavault_extension.insert_hwm(this) }}"]) }}
 with
 {{ datavault_extension.pre_hwm(this, omit_with=true, add_comma_at_end=true) }}
 raw_data AS 
