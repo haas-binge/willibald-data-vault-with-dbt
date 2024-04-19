@@ -133,3 +133,4 @@ useful_scripts/_activate_database.ps1
 [~][$]*
 
 
+useful_scripts/activate_database_jb.sh
