@@ -138,7 +138,7 @@ We'd suggest to use the one nearest to you, though.
 
 Within Snowflake you only need to create a data warehouse database.
 
-Let's call the database DWH_WILLIBALD (in this document and its scripts it will be referenced as this).
+Let's call the database WILLIBALD_DATA_VAULT_WITH_DBT (in this document and its scripts it will be referenced as this).
 
 
 ### Connect dbt with the Snowflake account
