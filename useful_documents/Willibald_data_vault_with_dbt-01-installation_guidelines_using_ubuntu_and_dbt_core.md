@@ -157,15 +157,15 @@ nano ~/.bashrc
 Add your environment variable definition at the end of the file. 
 
 ```bash
-    export DWH_SNOWFLAKE_ACCOUNT="my_account"  
+    export DBT_SNOWFLAKE_ACCOUNT="my_account"  
 	# you will find your account in Snowflake under Admin - Accounts -> click copy link it will look something like https://xxxx-yy1234.snowflakecomputing.com
     # only use xxxx-yy1234 as "my_account"!
-    export DWH_USER="my_dwh_user" 
+    export DBT_USER="my_dwh_user" 
     # you will find the user under Admin - Users & Roles   
-    export DWH_PASSWORD="my_password"     
-    export DWH_DATABASE="my_database" 
+    export DBT_PASSWORD="my_password"     
+    export DBT_DATABASE="my_database" 
     # DWH_WILLIBALD or the name you chose
-    export DWH_SOURCE_DATABASE="DWA_COMPARE"  
+    export DBT_SOURCE_DATABASE="DWA_COMPARE"  
     # keep that name, if you want to use the privat share we are providing
 ```
 
