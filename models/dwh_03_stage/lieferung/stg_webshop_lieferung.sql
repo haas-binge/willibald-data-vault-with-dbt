@@ -9,56 +9,56 @@
 source_model: 
   'load_webshop_lieferung'
 hashed_columns:
-  hk_deliveryadress_h:
-    - lieferadrid
-  hk_deliveryservice_h:
-    - lieferdienstid
-  hk_order_h:
-    - bestellungid
-  hk_position_h:
-    - bestellungid
-    - posid
-  hk_order_position_l:
-    - position_bk
-    - order_bk
-  hk_delivery_l:
-    - lieferadrid
-    - lieferdienstid
-    - bestellungid
-    - bestellungid
-    - posid
-  hd_position_ws_s:
+  HK_DELIVERYADRESS_H:
+    - LIEFERADRID
+  HK_DELIVERYSERVICE_H:
+    - LIEFERDIENSTID
+  HK_ORDER_H:
+    - BESTELLUNGID
+  HK_POSITION_H:
+    - BESTELLUNGID
+    - POSID
+  HK_ORDER_POSITION_L:
+    - POSITION_BK
+    - ORDER_BK
+  HK_DELIVERY_L:
+    - LIEFERADRID
+    - LIEFERDIENSTID
+    - BESTELLUNGID
+    - BESTELLUNGID
+    - POSID
+  HD_POSITION_WS_S:
     is_hashdiff: true
     columns:
-      - bestellungid
-      - posid
+      - BESTELLUNGID
+      - POSID
 
 
 
 
 derived_columns:
-    deliveryadress_bk:
-      value: lieferadrid
+    DELIVERYADRESS_BK:
+      value: LIEFERADRID
       datatype: 'VARCHAR'
-    deliveryservice_bk:
-      value: lieferdienstid
+    DELIVERYSERVICE_BK:
+      value: LIEFERDIENSTID
       datatype: 'VARCHAR'
-    order_bk:
-      value: bestellungid
+    ORDER_BK:
+      value: BESTELLUNGID
       datatype: 'VARCHAR'
-    position_bk:
-      value: bestellungid||'_'||posid
+    POSITION_BK:
+      value: BESTELLUNGID||'_'||POSID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

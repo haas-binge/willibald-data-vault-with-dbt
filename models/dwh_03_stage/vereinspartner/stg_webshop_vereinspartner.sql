@@ -9,41 +9,41 @@
 source_model: 
   'load_webshop_vereinspartner'
 hashed_columns:
-  hk_associationpartner_h:
-    - vereinspartnerid
-  hk_customer_h:
-    - kundeidverein
-  hk_associationpartner_customer_l:
-    - customer_bk
-    - associationpartner_bk
-  hd_associationpartner_ws_s:
+  HK_ASSOCIATIONPARTNER_H:
+    - VEREINSPARTNERID
+  HK_CUSTOMER_H:
+    - KUNDEIDVEREIN
+  HK_ASSOCIATIONPARTNER_CUSTOMER_L:
+    - CUSTOMER_BK
+    - ASSOCIATIONPARTNER_BK
+  HD_ASSOCIATIONPARTNER_WS_S:
     is_hashdiff: true
     columns:
-      - kundeidverein
-      - rabatt1
-      - rabatt2
-      - rabatt3
+      - KUNDEIDVEREIN
+      - RABATT1
+      - RABATT2
+      - RABATT3
 
 
 
 
 derived_columns:
-    associationpartner_bk:
-      value: vereinspartnerid
+    ASSOCIATIONPARTNER_BK:
+      value: VEREINSPARTNERID
       datatype: 'VARCHAR'
-    customer_bk:
-      value: kundeidverein
+    CUSTOMER_BK:
+      value: KUNDEIDVEREIN
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

@@ -9,51 +9,51 @@
 source_model: 
   'load_webshop_position'
 hashed_columns:
-  hk_order_h:
-    - bestellungid
-  hk_position_h:
-    - bestellungid
-    - posid
-  hk_product_h:
-    - produktid
-  hk_order_position_l:
-    - position_bk
-    - order_bk
-  hk_position_product_l:
-    - product_bk
-    - position_bk
-  hd_position_ws_s:
+  HK_ORDER_H:
+    - BESTELLUNGID
+  HK_POSITION_H:
+    - BESTELLUNGID
+    - POSID
+  HK_PRODUCT_H:
+    - PRODUKTID
+  HK_ORDER_POSITION_L:
+    - POSITION_BK
+    - ORDER_BK
+  HK_POSITION_PRODUCT_L:
+    - PRODUCT_BK
+    - POSITION_BK
+  HD_POSITION_WS_S:
     is_hashdiff: true
     columns:
-      - bestellungid
-      - menge
-      - posid
-      - preis
-      - spezlieferadrid
+      - BESTELLUNGID
+      - MENGE
+      - POSID
+      - PREIS
+      - SPEZLIEFERADRID
 
 
 
 
 derived_columns:
-    order_bk:
-      value: bestellungid
+    ORDER_BK:
+      value: BESTELLUNGID
       datatype: 'VARCHAR'
-    position_bk:
-      value: bestellungid||'_'||posid
+    POSITION_BK:
+      value: BESTELLUNGID||'_'||POSID
       datatype: 'VARCHAR'
-    product_bk:
-      value: produktid
+    PRODUCT_BK:
+      value: PRODUKTID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

@@ -9,39 +9,39 @@
 source_model: 
   'load_misc_kategorie_termintreue'
 hashed_columns:
-  hd_category_deliveryadherence_misc_rs:
+  HD_CATEGORY_DELIVERYADHERENCE_MISC_RS:
     is_hashdiff: true
     columns:
-      - anzahl_tage_von
-      - anzahl_tage_bis
-      - bezeichnung
+      - ANZAHL_TAGE_VON
+      - ANZAHL_TAGE_BIS
+      - BEZEICHNUNG
 
 
 
 
 derived_columns:
-    category_deliveryadherence_nk:
-      value: bewertung
+    CATEGORY_DELIVERYADHERENCE_NK:
+      value: BEWERTUNG
       datatype: 'VARCHAR'
-    count_days_from:
-      value: anzahl_tage_von
+    COUNT_DAYS_FROM:
+      value: ANZAHL_TAGE_VON
       datatype: 'VARCHAR'
-    count_days_to:
-      value: anzahl_tage_bis
+    COUNT_DAYS_TO:
+      value: ANZAHL_TAGE_BIS
       datatype: 'VARCHAR'
-    name:
-      value: bezeichnung
+    NAME:
+      value: BEZEICHNUNG
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

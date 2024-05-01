@@ -9,40 +9,40 @@
 source_model: 
   'load_webshop_wohnort'
 hashed_columns:
-  hk_customer_h:
-    - kundeid
-  hd_customer_ws_la_ms:
+  HK_CUSTOMER_H:
+    - KUNDEID
+  HD_CUSTOMER_WS_LA_MS:
     is_hashdiff: true
     columns:
-      - adresszusatz
-      - bis
-      - hausnummer
-      - land
-      - ort
-      - plz
-      - strasse
+      - ADRESSZUSATZ
+      - BIS
+      - HAUSNUMMER
+      - LAND
+      - ORT
+      - PLZ
+      - STRASSE
 
 
 multi_active_config:
     multi_active_key:
-      - von
-    main_hashkey_column: hk_customer_h
+      - VON
+    main_hashkey_column: HK_CUSTOMER_H
 
 
 derived_columns:
-    customer_bk:
-      value: kundeid
+    CUSTOMER_BK:
+      value: KUNDEID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

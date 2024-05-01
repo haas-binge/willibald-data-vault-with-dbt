@@ -9,38 +9,38 @@
 source_model: 
   'load_webshop_produktkategorie'
 hashed_columns:
-  hk_productcategory_h:
-    - katid
-  hk_productcategory_parent_h:
-    - oberkatid
-  hk_productcategory_hierarchy_l:
-    - productcategory_parent_bk
-    - productcategory_bk
-  hd_productcategory_ws_s:
+  HK_PRODUCTCATEGORY_H:
+    - KATID
+  HK_PRODUCTCATEGORY_PARENT_H:
+    - OBERKATID
+  HK_PRODUCTCATEGORY_HIERARCHY_L:
+    - PRODUCTCATEGORY_PARENT_BK
+    - PRODUCTCATEGORY_BK
+  HD_PRODUCTCATEGORY_WS_S:
     is_hashdiff: true
     columns:
-      - name
+      - NAME
 
 
 
 
 derived_columns:
-    productcategory_bk:
-      value: katid
+    PRODUCTCATEGORY_BK:
+      value: KATID
       datatype: 'VARCHAR'
-    productcategory_parent_bk:
-      value: oberkatid
+    PRODUCTCATEGORY_PARENT_BK:
+      value: OBERKATID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

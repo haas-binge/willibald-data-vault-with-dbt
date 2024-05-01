@@ -9,41 +9,41 @@
 source_model: 
   'load_webshop_bestellung'
 hashed_columns:
-  hk_customer_h:
-    - kundeid
-  hk_order_h:
-    - bestellungid
-  hk_order_customer_l:
-    - order_bk
-    - customer_bk
-  hd_order_ws_s:
+  HK_CUSTOMER_H:
+    - KUNDEID
+  HK_ORDER_H:
+    - BESTELLUNGID
+  HK_ORDER_CUSTOMER_L:
+    - ORDER_BK
+    - CUSTOMER_BK
+  HD_ORDER_WS_S:
     is_hashdiff: true
     columns:
-      - allglieferadrid
-      - bestelldatum
-      - rabatt
-      - wunschdatum
+      - ALLGLIEFERADRID
+      - BESTELLDATUM
+      - RABATT
+      - WUNSCHDATUM
 
 
 
 
 derived_columns:
-    customer_bk:
-      value: kundeid
+    CUSTOMER_BK:
+      value: KUNDEID
       datatype: 'VARCHAR'
-    order_bk:
-      value: bestellungid
+    ORDER_BK:
+      value: BESTELLUNGID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

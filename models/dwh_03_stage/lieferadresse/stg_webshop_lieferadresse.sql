@@ -9,43 +9,43 @@
 source_model: 
   'load_webshop_lieferadresse'
 hashed_columns:
-  hk_customer_h:
-    - kundeid
-  hk_deliveryadress_h:
-    - lieferadrid
-  hk_deliveryadress_customer_l:
-    - deliveryadress_bk
-    - customer_bk
-  hd_deliveryadress_ws_s:
+  HK_CUSTOMER_H:
+    - KUNDEID
+  HK_DELIVERYADRESS_H:
+    - LIEFERADRID
+  HK_DELIVERYADRESS_CUSTOMER_L:
+    - DELIVERYADRESS_BK
+    - CUSTOMER_BK
+  HD_DELIVERYADRESS_WS_S:
     is_hashdiff: true
     columns:
-      - adresszusatz
-      - hausnummer
-      - land
-      - ort
-      - plz
-      - strasse
+      - ADRESSZUSATZ
+      - HAUSNUMMER
+      - LAND
+      - ORT
+      - PLZ
+      - STRASSE
 
 
 
 
 derived_columns:
-    customer_bk:
-      value: kundeid
+    CUSTOMER_BK:
+      value: KUNDEID
       datatype: 'VARCHAR'
-    deliveryadress_bk:
-      value: lieferadrid
+    DELIVERYADRESS_BK:
+      value: LIEFERADRID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc_source' 
-ldts: 'ldts_source'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}
