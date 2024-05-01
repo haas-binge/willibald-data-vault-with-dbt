@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 {%- set yaml_metadata -%}
 source_model: pre_stg_error_roadshow
-ldts: ldts_src
+ldts: ldts
 rsrc: rsrc
 derived_columns: 
     error_row_no_bk:

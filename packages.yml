@@ -1,7 +1,7 @@
 packages:
   - package: ScalefreeCOM/datavault4dbt
-    version: 1.1.0
+    version: "1.2.2"
   - package: dbt-labs/dbt_external_tables
-    version: 0.8.5
+    version: "0.8.7"
   - git: https://github.com/haas-binge/dwa-compare-dbt-package.git
-    revision: main    
+    revision: New-Package-Versions

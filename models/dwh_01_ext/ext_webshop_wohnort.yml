@@ -1,7 +1,7 @@
 version: 2
 sources:
-  - name: WILLIBALD_DATA_VAULT_WITH_DBT
-    database: WILLIBALD_DATA_VAULT_WITH_DBT
+  - name: WILLIBALD_DATA_VAULT_WITH_DBT_EXT
+    database: WILLIBALD_DATA_VAULT_WITH_DBT_EXT
     schema: DWH_01_EXT
     tables:
       - name: EXT_WEBSHOP_WOHNORT
@@ -10,10 +10,10 @@ sources:
         - external
 
         external:
-          location: "@WILLIBALD_DATA_VAULT_WITH_DBT.DWH_01_EXT.DWH_01_EXT_STAGE/"
-          file_format: "(format_name = WILLIBALD_DATA_VAULT_WITH_DBT.DWH_01_EXT.FF_SEMICOLON)"
+          location: "@WILLIBALD_DATA_VAULT_WITH_DBT_EXT.DWH_01_EXT.DWH_01_EXT_STAGE/"
+          file_format: "(format_name = WILLIBALD_DATA_VAULT_WITH_DBT_EXT.DWH_01_EXT.FF_SEMICOLON)"
           auto_refresh: false
-          pattern: "webshop/wohnort/wohnort_.*[.]csv"
+          pattern: "V1.0/webshop/wohnort/wohnort_.*[.]csv"
           partitions:
             - name: filenamedate
               data_type: varchar

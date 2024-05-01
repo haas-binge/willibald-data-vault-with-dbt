@@ -72,8 +72,8 @@ derived_columns:
       value: edts_in
       datatype: 'DATE'
 
-rsrc: 'rsrc' 
-ldts: 'ldts'
+rsrc: 'rsrc_source' 
+ldts: 'ldts_source'
 include_source_columns: true
 
 {%- endset -%}

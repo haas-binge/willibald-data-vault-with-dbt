@@ -4,8 +4,8 @@
 
 {%- set yaml_metadata -%}
 source_model: load_webshop_ref_produkt_typ
-ldts: 'ldts'
-rsrc: 'rsrc'
+ldts: 'LDTS_SOURCE'
+rsrc: 'RSRC_SOURCE'
 derived_columns:
     cdts:
         value: {{var("local_timestamp")}}

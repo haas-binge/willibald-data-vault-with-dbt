@@ -2,7 +2,7 @@
 --LOAD_TIMESTAMP, RECORD_SOURCE, JSON_DATA, CHK_ALL_MSG
 {%- set yaml_metadata -%}
 source_model: pre_stg_error_webshop
-ldts: ldts_src
+ldts: ldts
 rsrc: rsrc
 derived_columns: 
     error_row_no_bk:
