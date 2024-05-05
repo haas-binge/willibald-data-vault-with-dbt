@@ -77,17 +77,17 @@ You can check it out on your snowflake account:
 -- Early Integration
 -----------------------------------------------------------------------------------------------------------
 
-select distinct rsrc  from dwh_willibald.dwh_04_rv.order_h
+select distinct rsrc  from willibald_data_vault_with_dbt.dwh_04_rv.order_h
 ;
 select distinct SUBSTRING(rsrc, 
                  CHARINDEX('/', rsrc) + 1, 
                  CHARINDEX('/', rsrc, CHARINDEX('/', rsrc) + 1) - CHARINDEX('/', rsrc) - 1) as source_system
-from dwh_willibald.dwh_04_rv.order_h
+from willibald_data_vault_with_dbt.dwh_04_rv.order_h
 ;
 --> there is data from webshop and roadshow in the hub order_h
 select 
 *
-from dwh_willibald.dwh_04_rv.position_h
+from willibald_data_vault_with_dbt.dwh_04_rv.position_h
 ;
 --> the position_bk is set up of bestellungid, produktid and a row_number
 ```   
@@ -112,8 +112,8 @@ customer_h.customer_bk
 , customer_ws_s.vorname
 , customer_ws_s.name
 , customer_ws_s.email
-from dwh_willibald.dwh_04_rv.customer_ws_s
-inner join dwh_willibald.dwh_04_rv.customer_h
+from willibald_data_vault_with_dbt.dwh_04_rv.customer_ws_s
+inner join willibald_data_vault_with_dbt.dwh_04_rv.customer_h
 on customer_ws_s.hk_customer_h=customer_h.hk_customer_h
 where customer_h.customer_bk='107'
 ;
@@ -126,7 +126,7 @@ sdts reporting_date
 , email
 , geburtsdatum
 , geschlecht
-from dwh_willibald.dwh_05_sn.customer_sns
+from willibald_data_vault_with_dbt.dwh_05_sn.customer_sns
 where customer_bk='107'
 order by sdts
 ;
@@ -147,8 +147,8 @@ customer_h.customer_bk
 , customer_ws_s.geburtsdatum
 , customer_ws_s.geschlecht
 , customer_ws_s.ldts
-from dwh_willibald.dwh_04_rv.customer_h
-inner join dwh_willibald.dwh_04_rv.customer_ws_s -- the standard raw vault satellite from the sourcesystem webshop (ws) with all the describing attributes
+from willibald_data_vault_with_dbt.dwh_04_rv.customer_h
+inner join willibald_data_vault_with_dbt.dwh_04_rv.customer_ws_s -- the standard raw vault satellite from the sourcesystem webshop (ws) with all the describing attributes
 on customer_h.hk_customer_h=customer_ws_s.hk_customer_h
 where customer_bk='70'
 ;
@@ -163,8 +163,8 @@ select
 customer_h.customer_bk
 , customer_ws_sts.ldts
 , customer_ws_sts.cdc
-from dwh_willibald.dwh_04_rv.customer_h
-inner join dwh_willibald.dwh_04_rv.customer_ws_sts -- the standard raw vault satellite from the sourcesystem webshop (ws) with all the describing attributes
+from willibald_data_vault_with_dbt.dwh_04_rv.customer_h
+inner join willibald_data_vault_with_dbt.dwh_04_rv.customer_ws_sts -- the standard raw vault satellite from the sourcesystem webshop (ws) with all the describing attributes
 on customer_h.hk_customer_h=customer_ws_sts.hk_customer_h
 where customer_bk='70'
 ;
@@ -213,7 +213,7 @@ sdts reporting_date
 , email
 , geburtsdatum
 , geschlecht
-from dwh_willibald.dwh_05_sn.customer_sns
+from willibald_data_vault_with_dbt.dwh_05_sn.customer_sns
 where customer_bk='70'
 order by sdts
 ;
@@ -237,7 +237,7 @@ It is possible to define a list of sourcetables to feed into the hub using the d
 ```sql
 select 
 *
-from dwh_willibald.dwh_02_load.load_webshop_lieferadresse  
+from willibald_data_vault_with_dbt.dwh_02_load.load_webshop_lieferadresse  
 -- be aware of the high water marking logic. There will only be data in here on the first run or when you call dbt build --full-refresh!
 where kundeid in ('997', '998', '999')
 ;
@@ -245,7 +245,7 @@ where kundeid in ('997', '998', '999')
 -- these three customer_bk have lieferadresse as recordsource (rsrc) 
 select 
 *
-from dwh_willibald.dwh_04_rv.customer_h
+from willibald_data_vault_with_dbt.dwh_04_rv.customer_h
 where customer_bk in ('997', '998', '999')
 ```
   
@@ -266,7 +266,7 @@ order_sns, for each reporting_date after period 2.
 select 
 sdts reporting_date
 , order_bk
-from dwh_willibald.dwh_05_sn.order_sns
+from willibald_data_vault_with_dbt.dwh_05_sn.order_sns
 where order_bk in ('99', '220', '465', '1288', '1470', '1' /*a order that wasn't deleted will show up at every following reporting_date*/)
 order by sdts, order_bk
 ;
@@ -296,7 +296,7 @@ sdts as reporting_date
 , cdm_count_days_from
 , cdm_count_days_to 
 , cdm_name
-from dwh_willibald.dwh_05_sn.category_deliveryadherence_sns
+from willibald_data_vault_with_dbt.dwh_05_sn.category_deliveryadherence_sns
 order by sdts, cdm_count_days_from
 ```
 
@@ -328,7 +328,7 @@ select
 kundeid, 
 vereinspartnerid, 
 ldts
-from  dwh_willibald.dwh_02_load.load_webshop_kunde
+from  willibald_data_vault_with_dbt.dwh_02_load.load_webshop_kunde
 -- be aware of the high water marking logic. There will only be data in here on the first run or when you call dbt build --full-refresh
 where kundeid in (16)
 order by rsrc
@@ -348,12 +348,12 @@ customer_associationpartner_ws_es.ldts,
 customer_associationpartner_ws_es.ledts, 
 customer_associationpartner_ws_es.is_current
 , customer_associationpartner_ws_es.hk_customer_associationpartner_l
-from dwh_willibald.dwh_04_rv.customer_h 
-inner join dwh_willibald.dwh_04_rv.customer_associationpartner_l
+from willibald_data_vault_with_dbt.dwh_04_rv.customer_h 
+inner join willibald_data_vault_with_dbt.dwh_04_rv.customer_associationpartner_l
 on customer_h.hk_customer_h=customer_associationpartner_l.hk_customer_h
-inner join dwh_willibald.dwh_04_rv.associationpartner_h
+inner join willibald_data_vault_with_dbt.dwh_04_rv.associationpartner_h
 on associationpartner_h.hk_associationpartner_h=customer_associationpartner_l.hk_associationpartner_h
-inner join dwh_willibald.dwh_04_rv.customer_associationpartner_ws_es
+inner join willibald_data_vault_with_dbt.dwh_04_rv.customer_associationpartner_ws_es
 on customer_associationpartner_l.hk_customer_associationpartner_l=customer_associationpartner_ws_es.hk_customer_associationpartner_l
 where customer_bk='16'
 order by customer_associationpartner_ws_es.ldts, customer_associationpartner_ws_es.ledts
@@ -398,7 +398,7 @@ sdts
 , productcategory_l3
 , productcategory_l2
 , productcategory_l1
-from dwh_willibald.dwh_06_bv.productcategory_bs
+from willibald_data_vault_with_dbt.dwh_06_bv.productcategory_bs
 where productcategory_l3='Amaranth'
 order by sdts
 ;
@@ -447,8 +447,8 @@ customer_ws_la_ms.ldts
 , strasse
 , hausnummer
 , hd_customer_ws_la_ms
-from dwh_willibald.dwh_04_rv.customer_ws_la_ms
-inner join dwh_willibald.dwh_04_rv.customer_h
+from willibald_data_vault_with_dbt.dwh_04_rv.customer_ws_la_ms
+inner join willibald_data_vault_with_dbt.dwh_04_rv.customer_h
 on customer_ws_la_ms.hk_customer_h=customer_h.hk_customer_h
 where customer_bk='29'
 order by ldts, von

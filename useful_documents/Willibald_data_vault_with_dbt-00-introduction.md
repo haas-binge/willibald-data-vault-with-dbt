@@ -59,15 +59,12 @@ For more on this go to
 
 ## What is this repository all about
 
-To simplify the installation, we defined a Snowflake private share mimicking the external tables within our initial solution.  
-That way no S3 setup is required and you can still gain full insights into our solution.  
-
-<img src="images/solution_overview.png" alt="solution_overview" width="300">  
+To simplify the installation, we made the S3 bucket containing the data of the source system publicly available. So it should be pretty straigtforward for you to get the solution running in your environment. 
 
 
 ## Tutorials/documents describing the solution
 
-See [README](../README.md) =
+See [README](../README.md).
 
 If you don't know how to start...step in here to get a description of the installation in dbt cloud: 
 [Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud](Willibald_data_vault_with_dbt-01-installation_guidelines_using_dbt_cloud.md) 

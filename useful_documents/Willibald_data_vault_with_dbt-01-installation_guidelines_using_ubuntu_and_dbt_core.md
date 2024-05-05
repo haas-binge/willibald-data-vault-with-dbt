@@ -7,7 +7,7 @@ the Willibald on dbt implementation, trying not to assume any prior knowledge.
 You don't need to know anything about Python, dbt or data vault.
 To have a completely clean environment for this setup, we used a virtual machine with Ubuntu 22.04.
 
-Our host machine is Windows (You will need Windows 10 64Bit Professional Edition at least), so we used Hyper V Manager to create the virtual machine.
+Our host machine is Windows, so we used Hyper V Manager to create the virtual machine (You will need Windows 10 64Bit Professional Edition at least).
 
 Open Hyper-V-Manager/Action/create new virtual machine --> Choose Ubuntu (newest LTS)
 
@@ -163,7 +163,7 @@ Add your environment variable definition at the end of the file.
     export DBT_USER="my_dwh_user" 
     # you will find the user under Admin - Users & Roles   
     export DBT_PASSWORD="my_password"     
-    export DBT_DATABASE="WILLIBALD_DATA_VAULT_WITH_DBT" 
+    export DBT_DATABASE="WILLIBALD_DATA_VAULT_WITH_DBT"
     # WILLIBALD_DATA_VAULT_WITH_DBT or the name you chose
     export DBT_SOURCE_DATABASE="WILLIBALD_DATA_VAULT_WITH_DBT"  
 ```

@@ -48,9 +48,9 @@ Description of how we closely integrated this dbt-solution with [dataspot.](http
 For those, who are familiar with dbt, here is a short instruction on how to install.  
 We'd still recommend looking at our documentation regarding the specifics of our solution.  
 
-Our initial setup contained an AWS S3 datalake with external tables in snowflake referencing them.  
-To simplify the process we now offer the data (in the way they looked as external tables) as a snowflake private share named DWA_COMPARE.  
-If you want to access it, just contact us, we are happy to add you.  
+We made the S3 bucket containing the source data publicly available. 
+
+If you have any questions or comments, just contact us, we are happy to hear from you.  
 See [Willibald data vault with dbt - 00 - introduction](useful_documents/Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
 
 
@@ -63,8 +63,6 @@ See [Willibald data vault with dbt - 00 - introduction](useful_documents/Williba
 - install dependencies: dbt deps
   (In addition to the package datavault4dbt we defined our own macros published as the package datavault_extension (see packages.yml)).
 - configure your database connection using the dbt configuration file or edit profiles.yml in source-directory (includes adding three environment-variables).
-- how to get the base data
-   - contact us to get access to the private share DWA_COMPARE  
 - run the dbt commands (dbt build) to create your data models and transform your data.
 
 
@@ -80,7 +78,7 @@ Installation of newer / other versions was not tested
 
 
 ## Contributing
-We do not expect contributions to this project. If you have any suggestions please contact us.  
+We do not expect contributions to this project for now. If you have any suggestions please contact us.  
 See [Willibald data vault with dbt - 00 - introduction](useful_documents/Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
 
 ## License
