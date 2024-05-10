@@ -45,7 +45,7 @@ You get the full data lineage and all the documentation you entered on table lev
 Make sure to use double curly brackets with the function ref and the table you want use in your sql for all the models you define not using any macros.
 ```
 --instead of
-from dwh_willibald.dwh_05_sn.customer_sns
+from willibald_data_vault_with_dbt.dwh_05_sn.customer_sns
 -- use
 from {{ ref("customer_sns)}}
 ```
@@ -109,7 +109,7 @@ select
 ldts
 , raw_data
 , chk_all_msg
-from dwh_willibald.dwh_03_err.error_ws_s
+from willibald_data_vault_with_dbt.dwh_03_err.error_ws_s
 where rsrc not in ('SYSTEM', 'ERROR')
 ;
 ```

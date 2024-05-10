@@ -29,38 +29,23 @@ Keep the following information regarding your snowflake account, because you wil
     Database:
     Within Snowflake you need to create a data warehouse database.
     (Data - Databases - + Database (top right corner))
-    Let's call the database DWH_WILLIBALD (in this document and its scripts it will be referenced as this).
+    Let's call the database WILLIBALD_DATA_VAULT_WITH_DBT (in this document and its scripts it will be referenced as this).
 
     Warehouse:
     Under Admin - Warehouses you can create a new Warehouse or choose a standard one.
     e.g. COMPUTE_WH
 
-    Username:
+    Username/Password of the User you defined setting up your snowflake accout.
     You can also create a specific user for accessing snowflake from dbt.
 
-    Password:
 
 
-## Connect to the source data
 
-Our initial setup contained an AWS S3 datalake with external tables in snowflake referencing them. 
-To simplify the process we now offer the data as a snowflake private share named DWA_COMPARE (mimicking the external tables). 
-If you want to access it, just contact us, we are happy to add you.
-
-See [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
-
-All we need from you is your Snowflake account name.
-Within Snowflake/Admin/Accounts click on your account and copy the link, it will look like:
-https://xxxx-yy1234.snowflakecomputing.com
-
-As soon as we added you to the private share, the database dwa_compare will show up under Snowflake/Data Products/Private Sharing.
-You will need to click on GET to activate this private share for you.
-
-## Fork/Clone repository in GitHub
+## Fork repository in GitHub
 
 Log into your github account (or create one).
 Search for our repository: haas-binge/willibald-data-vault-with-dbt.
-Fork or clone the repository. 
+Fork the repository. 
 
 
 ## Set up a dbt cloud account
@@ -98,7 +83,7 @@ Let's hope you see this, otherwise check the troubleshooting pages from dbt
 Choose GitHub
 
 LogIn and authorize dbt 
- you only need to authorize the cloned or forked repository.
+ you only need to authorize the forked repository.
 
 <img src="images/dbtcloud_projectisready.png" alt="dbtcloud_projectisready" width="500">  
 
@@ -114,8 +99,8 @@ choose Environment variables and add the following two Variables:
 |            |                     |          |
 | ---------- | ------------------- | -------- |
 | **Environment Variable**   | **Name**        | **comment** |
-| DBT_SOURCE_DATABASE      | DWA_COMPARE            | the databaseshare we offer as a private    |
-| DBT_DATABASE        | DWH_WILLIBALD               | or any other DB name you chose for your DWH   |
+| DBT_SOURCE_DATABASE      | WILLIBALD_DATA_VAULT_WITH_DBT            | or the other DB name you chose for your DWH    |
+| DBT_DATABASE        | WILLIBALD_DATA_VAULT_WITH_DBT               | or the other DB name you chose for your DWH   |
 
 
 
