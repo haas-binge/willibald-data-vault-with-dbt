@@ -1,9 +1,9 @@
-{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('WILLIBALD_DATA_VAULT_WITH_DBT_EXT.EXT_WEBSHOP_BESTELLUNG','snowflake_external_table') }}"], post_hook=["{{ datavault_extension.insert_hwm(this,'ldts_source') }}"]) }}
+{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('WILLIBALD_DATA_VAULT_WITH_DBT.EXT_WEBSHOP_BESTELLUNG','snowflake_external_table') }}"], post_hook=["{{ datavault_extension.insert_hwm(this,'ldts_source') }}"]) }}
 
 {%- set yaml_metadata -%}
 source_model: 
   source_table: EXT_WEBSHOP_BESTELLUNG
-  source_database: WILLIBALD_DATA_VAULT_WITH_DBT_EXT
+  source_database: WILLIBALD_DATA_VAULT_WITH_DBT
   source_name: LOAD_EXT
 hwm: True
 source_type: snowflake_external_table
