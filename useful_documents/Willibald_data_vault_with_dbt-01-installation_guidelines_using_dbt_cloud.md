@@ -41,11 +41,11 @@ Keep the following information regarding your snowflake account, because you wil
 
 
 
-## Fork/Clone repository in GitHub
+## Fork repository in GitHub
 
 Log into your github account (or create one).
 Search for our repository: haas-binge/willibald-data-vault-with-dbt.
-Fork or clone the repository. 
+Fork the repository. 
 
 
 ## Set up a dbt cloud account
@@ -83,7 +83,7 @@ Let's hope you see this, otherwise check the troubleshooting pages from dbt
 Choose GitHub
 
 LogIn and authorize dbt 
- you only need to authorize the cloned or forked repository.
+ you only need to authorize the forked repository.
 
 <img src="images/dbtcloud_projectisready.png" alt="dbtcloud_projectisready" width="500">  
 
@@ -99,8 +99,8 @@ choose Environment variables and add the following two Variables:
 |            |                     |          |
 | ---------- | ------------------- | -------- |
 | **Environment Variable**   | **Name**        | **comment** |
-| DBT_SOURCE_DATABASE      | DWA_COMPARE            | the databaseshare we offer as a private    |
-| DBT_DATABASE        | WILLIBALD_DATA_VAULT_WITH_DBT               | or any other DB name you chose for your DWH   |
+| DBT_SOURCE_DATABASE      | WILLIBALD_DATA_VAULT_WITH_DBT            | or the other DB name you chose for your DWH    |
+| DBT_DATABASE        | WILLIBALD_DATA_VAULT_WITH_DBT               | or the other DB name you chose for your DWH   |
 
 
 
