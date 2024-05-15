@@ -61,7 +61,7 @@ source_model_target:
       - position: hk_position_h
     satellites:
       position_product_rs_sts:
-
+src_ldts: ldts_source
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

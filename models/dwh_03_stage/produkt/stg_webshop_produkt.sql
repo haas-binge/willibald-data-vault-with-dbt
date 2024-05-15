@@ -9,43 +9,43 @@
 source_model: 
   'load_webshop_produkt'
 hashed_columns:
-  hk_product_h:
-    - produktid
-  hk_productcategory_h:
-    - katid
-  hk_product_productcategory_l:
-    - productcategory_bk
-    - product_bk
-  hd_product_ws_s:
+  HK_PRODUCT_H:
+    - PRODUKTID
+  HK_PRODUCTCATEGORY_H:
+    - KATID
+  HK_PRODUCT_PRODUCTCATEGORY_L:
+    - PRODUCTCATEGORY_BK
+    - PRODUCT_BK
+  HD_PRODUCT_WS_S:
     is_hashdiff: true
     columns:
-      - bezeichnung
-      - pflanzabstand
-      - pflanzort
-      - preis
-      - typ
-      - umfang
+      - BEZEICHNUNG
+      - PFLANZABSTAND
+      - PFLANZORT
+      - PREIS
+      - TYP
+      - UMFANG
 
 
 
 
 derived_columns:
-    product_bk:
-      value: produktid
+    PRODUCT_BK:
+      value: PRODUKTID
       datatype: 'VARCHAR'
-    productcategory_bk:
-      value: katid
+    PRODUCTCATEGORY_BK:
+      value: KATID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc' 
-ldts: 'ldts'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

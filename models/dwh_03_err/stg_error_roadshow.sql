@@ -1,22 +1,22 @@
 {{ config(materialized='view') }}
 {%- set yaml_metadata -%}
 source_model: pre_stg_error_roadshow
-ldts: ldts_src
-rsrc: rsrc
+ldts: LDTS
+rsrc: RSRC
 derived_columns: 
-    error_row_no_bk:
+    ERROR_ROW_NO_BK:
         value: to_varchar(row_number)
         datatype: 'VARCHAR'
-    error_file_bk:
+    ERROR_FILE_BK:
         value: to_varchar(rsrc)
         datatype: 'VARCHAR'
 hashed_columns: 
-    hk_error_h:
-        - error_file_bk
-        - error_row_no_bk
-    hd_error_s:
-        - raw_data
-        - chk_all_msg 
+    HK_ERROR_H:
+        - ERROR_FILE_BK
+        - ERROR_ROW_NO_BK
+    HD_ERROR_S:
+        - RAW_DATA
+        - CHK_ALL_MSG 
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

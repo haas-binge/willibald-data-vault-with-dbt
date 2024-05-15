@@ -9,47 +9,47 @@
 source_model: 
   'load_webshop_kunde'
 hashed_columns:
-  hk_associationpartner_h:
-    - vereinspartnerid
-  hk_customer_h:
-    - kundeid
-  hk_customer_associationpartner_l:
-    - customer_bk
-    - associationpartner_bk
-  hd_customer_ws_s:
+  HK_ASSOCIATIONPARTNER_H:
+    - VEREINSPARTNERID
+  HK_CUSTOMER_H:
+    - KUNDEID
+  HK_CUSTOMER_ASSOCIATIONPARTNER_L:
+    - CUSTOMER_BK
+    - ASSOCIATIONPARTNER_BK
+  HD_CUSTOMER_WS_S:
     is_hashdiff: true
     columns:
-      - email
-      - geburtsdatum
-      - geschlecht
-      - gueltigbis
-      - kkfirma
-      - kreditkarte
-      - mobil
-      - name
-      - telefon
-      - vorname
+      - EMAIL
+      - GEBURTSDATUM
+      - GESCHLECHT
+      - GUELTIGBIS
+      - KKFIRMA
+      - KREDITKARTE
+      - MOBIL
+      - NAME
+      - TELEFON
+      - VORNAME
 
 
 
 
 derived_columns:
-    associationpartner_bk:
-      value: vereinspartnerid
+    ASSOCIATIONPARTNER_BK:
+      value: VEREINSPARTNERID
       datatype: 'VARCHAR'
-    customer_bk:
-      value: kundeid
+    CUSTOMER_BK:
+      value: KUNDEID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc' 
-ldts: 'ldts'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

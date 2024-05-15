@@ -7,7 +7,7 @@ the Willibald on dbt implementation, trying not to assume any prior knowledge.
 You don't need to know anything about Python, dbt or data vault.
 To have a completely clean environment for this setup, we used a virtual machine with Ubuntu 22.04.
 
-Our host machine is Windows (You will need Windows 10 64Bit Professional Edition at least), so we used Hyper V Manager to create the virtual machine.
+Our host machine is Windows, so we used Hyper V Manager to create the virtual machine (You will need Windows 10 64Bit Professional Edition at least).
 
 Open Hyper-V-Manager/Action/create new virtual machine --> Choose Ubuntu (newest LTS)
 
@@ -138,7 +138,7 @@ We'd suggest to use the one nearest to you, though.
 
 Within Snowflake you only need to create a data warehouse database.
 
-Let's call the database DWH_WILLIBALD (in this document and its scripts it will be referenced as this).
+Let's call the database WILLIBALD_DATA_VAULT_WITH_DBT (in this document and its scripts it will be referenced as this).
 
 
 ### Connect dbt with the Snowflake account
@@ -155,7 +155,7 @@ you can add them to the user's shell configuration file
 nano ~/.bashrc
 ```
 Add your environment variable definition at the end of the file. 
-
+(There are some scripts to help you in the /useful_scripts folder )
 ```bash
     export DBT_SNOWFLAKE_ACCOUNT="my_account"  
 	# you will find your account in Snowflake under Admin - Accounts -> click copy link it will look something like https://xxxx-yy1234.snowflakecomputing.com
@@ -163,10 +163,9 @@ Add your environment variable definition at the end of the file.
     export DBT_USER="my_dwh_user" 
     # you will find the user under Admin - Users & Roles   
     export DBT_PASSWORD="my_password"     
-    export DBT_DATABASE="my_database" 
-    # DWH_WILLIBALD or the name you chose
-    export DBT_SOURCE_DATABASE="DWA_COMPARE"  
-    # keep that name, if you want to use the privat share we are providing
+    export DBT_DATABASE="WILLIBALD_DATA_VAULT_WITH_DBT"
+    # WILLIBALD_DATA_VAULT_WITH_DBT or the name you chose
+    export DBT_SOURCE_DATABASE="WILLIBALD_DATA_VAULT_WITH_DBT"  
 ```
 
 
@@ -194,18 +193,17 @@ All checks should be ok.
 
 ## Connect to the source data
 
-Our initial setup contained an AWS S3 datalake (see page 7 in the presentation Willibald_with_dbt_slides.pdf) with external tables in snowflake referencing them. 
-To simplify the process we now offer the data (in the way they looked as external tables) as a snowflake private share named DWA_COMPARE. 
-If you want to access it, just contact us, we are happy to add you.
+We are storing the source-data in an AWS S3 datalake (see page 7 in the presentation Willibald_with_dbt_slides.pdf) and use external tables in snowflake to reference them. 
+The external table needs an external Snowflake-stage which points to the s3-bucket and a file-format to resolve the data stored in the files.
+Both objects are being created as you start the dbt-build by running the autoexec-script "prepare_external_stage". 
 
-See [Willibald data vault with dbt - 00 - introduction](Willibald_data_vault_with_dbt-00-introduction.md) for contact data.
+As long as your database is named "WILLIBALD_DATA_VAULT_WITH_DBT" and this database is set in the environment-variables (see above) DBT_SOURCE_DATABASE and DBT_DATABASE you don't have to change anything. 
 
-All we need from you is your Snowflake account name.
-Within Snowflake/Admin/Accounts click on your account and copy the link, it will look like:
-https://xxxx-yy1234.snowflakecomputing.com
+If you named your database differently (and set it in the environment-variables) you have to make a global change and replace (in the models-folder) like shown in this picture:
 
-As soon as we added you to the private share, the database dwa_compare will show up under Snowflake/Data/Private Sharing.
-You will need to click on GET to activate this private share for you (and follow the snowflake instructions via email).
+<img src="images/init_dbt_solution_search_and_replace.png" alt="search and replace" width="300">
+
+There should be 77 replacements in 26 files.
 
 ## Run the full solution
 

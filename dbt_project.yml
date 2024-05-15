@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -64,8 +63,8 @@ vars:
   datavault4dbt.unknown_value_alt__STRING: 'u'
   default_collision_key: "'!default'"
   local_timestamp: "TO_TIMESTAMP(DATEADD(HOUR, 1, SYSDATE()))"
-  meta_schema: dwh_00_meta
-  external_tables_schema: dwh_01_external
+  meta_schema: DWH_00_META
+  external_tables_schema: DWH_01_EXT
   ext_full_refresh: true
   
 on-run-start:

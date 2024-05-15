@@ -1,14 +1,14 @@
-{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('DWS.EXT_WEBSHOP_POSITION','snowflake_external_table_surrogate') }}"], post_hook=["{{ datavault_extension.insert_hwm(this) }}"]) }}
+{{ config(materialized="table", pre_hook=["{{ datavault_extension.refresh_external_table('WILLIBALD_DATA_VAULT_WITH_DBT.EXT_WEBSHOP_POSITION','snowflake_external_table') }}"], post_hook=["{{ datavault_extension.insert_hwm(this,'ldts_source') }}"]) }}
 
 {%- set yaml_metadata -%}
 source_model: 
   source_table: EXT_WEBSHOP_POSITION
-  source_database: DWS
+  source_database: WILLIBALD_DATA_VAULT_WITH_DBT
   source_name: LOAD_EXT
 hwm: True
-source_type: snowflake_external_table_surrogate
+source_type: snowflake_external_table
 dub_check:
-- ldts
+- ldts_source
 - bestellungid
 - PosID
 
@@ -39,12 +39,12 @@ columns:
       source_column_number: 6
 
 default_columns:
-    ldts:
+    ldts_source:
       data_type: TIMESTAMP
       format: YYYYMMDD_HH24MISS
       type_check: True
       value: replace(right(filenamedate,19),'.csv','')
-    rsrc:
+    rsrc_source:
       data_type: VARCHAR
       value: filenamedate
 

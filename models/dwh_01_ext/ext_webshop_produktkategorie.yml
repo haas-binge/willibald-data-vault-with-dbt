@@ -1,0 +1,20 @@
+version: 2
+sources:
+  - name: WILLIBALD_DATA_VAULT_WITH_DBT
+    database: WILLIBALD_DATA_VAULT_WITH_DBT
+    schema: DWH_01_EXT
+    tables:
+      - name: EXT_WEBSHOP_PRODUKTKATEGORIE
+        description: ""
+        tags:
+        - external
+
+        external:
+          location: "@WILLIBALD_DATA_VAULT_WITH_DBT.DWH_01_EXT.DWH_01_EXT_STAGE/"
+          file_format: "(format_name = WILLIBALD_DATA_VAULT_WITH_DBT.DWH_01_EXT.FF_SEMICOLON)"
+          auto_refresh: false
+          pattern: "V1.0/webshop/produktkategorie/produktkategorie_.*[.]csv"
+          partitions:
+            - name: filenamedate
+              data_type: varchar
+              expression: metadata$filename

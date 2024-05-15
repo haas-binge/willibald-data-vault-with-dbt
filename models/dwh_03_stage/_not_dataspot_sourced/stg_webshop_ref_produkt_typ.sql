@@ -4,24 +4,24 @@
 
 {%- set yaml_metadata -%}
 source_model: load_webshop_ref_produkt_typ
-ldts: 'ldts'
-rsrc: 'rsrc'
+ldts: 'LDTS_SOURCE'
+rsrc: 'RSRC_SOURCE'
 derived_columns:
-    cdts:
+    CDTS:
         value: {{var("local_timestamp")}}
         datatype: 'TIMESTAMP'        
-    product_type_nk:
+    PRODUCT_TYPE_NK:
         value: typ::string
         datatype: 'VARCHAR' 
-    edts:      
+    EDTS:      
         value: edts_in
         datatype: 'DATE'   
 
 hashed_columns:
-    hd_product_type_ws_rs:
+    HD_PRODUCT_TYPE_WS_RS:
         is_hashdiff: true
         columns:
-            - 'bezeichnung'            
+            - 'BEZEICHNUNG'            
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

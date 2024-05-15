@@ -9,38 +9,38 @@
 source_model: 
   'load_webshop_lieferdienst'
 hashed_columns:
-  hk_deliveryservice_h:
-    - lieferdienstid
-  hd_deliveryservice_ws_s:
+  HK_DELIVERYSERVICE_H:
+    - LIEFERDIENSTID
+  HD_DELIVERYSERVICE_WS_S:
     is_hashdiff: true
     columns:
-      - email
-      - fax
-      - hausnummer
-      - land
-      - name
-      - ort
-      - plz
-      - strasse
-      - telefon
+      - EMAIL
+      - FAX
+      - HAUSNUMMER
+      - LAND
+      - NAME
+      - ORT
+      - PLZ
+      - STRASSE
+      - TELEFON
 
 
 
 
 derived_columns:
-    deliveryservice_bk:
-      value: lieferdienstid
+    DELIVERYSERVICE_BK:
+      value: LIEFERDIENSTID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc' 
-ldts: 'ldts'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}

@@ -9,71 +9,71 @@
 source_model: 
   'load_roadshow_bestellung'
 hashed_columns:
-  hk_associationpartner_h:
-    - vereinspartnerid
-  hk_customer_h:
-    - kundeid
-  hk_order_h:
-    - bestellungid
-  hk_position_h:
-    - bestellungid
-    - produktid
-  hk_product_h:
-    - produktid
-  hk_order_associationpartner_l:
-    - order_bk
-    - associationpartner_bk
-  hk_order_customer_l:
-    - order_bk
-    - customer_bk
-  hk_order_position_l:
-    - position_bk
-    - order_bk
-  hk_position_product_l:
-    - product_bk
-    - position_bk
-  hd_position_rs_s:
+  HK_ASSOCIATIONPARTNER_H:
+    - VEREINSPARTNERID
+  HK_CUSTOMER_H:
+    - KUNDEID
+  HK_ORDER_H:
+    - BESTELLUNGID
+  HK_POSITION_H:
+    - BESTELLUNGID
+    - PRODUKTID
+  HK_PRODUCT_H:
+    - PRODUKTID
+  HK_ORDER_ASSOCIATIONPARTNER_L:
+    - ORDER_BK
+    - ASSOCIATIONPARTNER_BK
+  HK_ORDER_CUSTOMER_L:
+    - ORDER_BK
+    - CUSTOMER_BK
+  HK_ORDER_POSITION_L:
+    - POSITION_BK
+    - ORDER_BK
+  HK_POSITION_PRODUCT_L:
+    - PRODUCT_BK
+    - POSITION_BK
+  HD_POSITION_RS_S:
     is_hashdiff: true
     columns:
-      - bestellungid
-      - gueltigbis
-      - kaufdatum
-      - kkfirma
-      - kreditkarte
-      - menge
-      - preis
-      - produktid
-      - rabatt
+      - BESTELLUNGID
+      - GUELTIGBIS
+      - KAUFDATUM
+      - KKFIRMA
+      - KREDITKARTE
+      - MENGE
+      - PREIS
+      - PRODUKTID
+      - RABATT
 
 
 
 
 derived_columns:
-    associationpartner_bk:
-      value: vereinspartnerid
+    ASSOCIATIONPARTNER_BK:
+      value: VEREINSPARTNERID
       datatype: 'VARCHAR'
-    customer_bk:
-      value: kundeid
+    CUSTOMER_BK:
+      value: KUNDEID
       datatype: 'VARCHAR'
-    order_bk:
-      value: bestellungid
+    ORDER_BK:
+      value: BESTELLUNGID
       datatype: 'VARCHAR'
-    position_bk:
-      value: cast(BESTELLUNGID ||'_'|| produktid ||'_'|| cast(row_number() over (partition by ldts, bestellungid, produktid  order by menge, preis) as varchar) as varchar)
+    POSITION_BK:
+      value: CAST(BESTELLUNGID ||'_'|| PRODUKTID ||'_'|| CAST(ROW_NUMBER() OVER (PARTITION BY LDTS, BESTELLUNGID, PRODUKTID  ORDER BY MENGE, PREIS) AS VARCHAR) AS VARCHAR)
       datatype: 'VARCHAR'
-    product_bk:
-      value: produktid
+    PRODUCT_BK:
+      value: PRODUKTID
       datatype: 'VARCHAR'
 
-    cdts:
+    CDTS:
       value: {{var("local_timestamp")}}
       datatype: 'TIMESTAMP'
-    edts:      
-      value: edts_in
+    EDTS:      
+      value: EDTS_IN
       datatype: 'DATE'
 
-rsrc: 'rsrc' 
-ldts: 'ldts'
+rsrc: 'RSRC_SOURCE' 
+ldts: 'LDTS_SOURCE'
 include_source_columns: true
 
 {%- endset -%}
